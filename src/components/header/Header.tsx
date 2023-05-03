@@ -1,5 +1,5 @@
-import Navigation from "./Navigation";
-import HeaderBtns from "./HeaderBtns";
+import Navigation from "../Navigation";
+import HeaderBtns from "../HeaderBtns";
 
 function Header() {
     return <header className="header">
