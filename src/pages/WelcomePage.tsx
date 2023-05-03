@@ -1,5 +1,9 @@
 function WelcomePage() {
-    return <div>This is Welcome Page</div>;
+  return (
+    <div className="welcome-page">
+      This is a Welcome page
+    </div>
+   )
   }
   export default WelcomePage;
   
