@@ -1,0 +1,29 @@
+@import '../../styles/variables.scss';
+.nav {
+    font-family: 'Rubik', sans-serif;
+    &__ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+    &__li {
+        list-style: none;
+    }
+
+    &__link {
+    color: $color-grey;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+    font-weight: 300;
+    font-size: 15px;
+    &:hover {
+        color:white;
+    }
+} 
+}
+
+.active {
+    color: white;
+}

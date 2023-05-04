@@ -2,4 +2,7 @@
 
 .header {
     background-color: $background-dark;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
