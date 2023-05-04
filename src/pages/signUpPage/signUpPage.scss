@@ -1,0 +1,70 @@
+@import '../../styles/variables.scss';
+
+.sign-up {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-bg;
+}
+
+.sign-up-form {
+  width: 60%;
+  height: fit-content;
+  padding: 30px 30px 50px;
+  border: 2px solid $color-pink;
+  border-radius: 15px;
+
+  &__title {
+    color: $color-title;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+}
+
+label {
+  display: block;
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: $color-pink;
+}
+
+input {
+  width: 100%;
+  height: 60px;
+  background-color: $color-input;
+  outline: none;
+  border: none;
+  margin-bottom: 20px;
+  color: $color-input-text;
+  font-size: 18px;
+  padding: 0 20px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  &_sign-up {
+    display: block;
+    margin: 20px auto 0;
+    width: 150px;
+    height: 50px;
+    background-color: $color-pink;
+    color: $color-bg;
+    font-size: 20px;
+    font-weight: 500;
+    transition: 0.4s;
+    border-radius: 5px;
+
+    &:hover {
+      color: $color-title;
+    }
+  }
+}
