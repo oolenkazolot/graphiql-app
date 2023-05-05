@@ -28,7 +28,7 @@ const SignInPage: React.FC = () => {
             type="email"
             id="user-email"
             {...register('email', { required: 'This field is mandatory for signing in' })}
-            placeholder="Please enter registered e-mail"
+            placeholder="Please enter your e-mail"
           />
           {errors.email?.type === 'required' && (
             <span className="error-message">{errors.email.message}</span>
@@ -46,7 +46,7 @@ const SignInPage: React.FC = () => {
             <span className="error-message">{errors.password.message}</span>
           )}
         </div>
-        <button className="button button_sign-in">Sign In</button>
+        <button className="button-auth button-auth_sign-in">Sign In</button>
         <div className="sign-in-form__redirect">
           <span className="sign-in-form__text">Do not have an account yet?</span>
           <Link to="/SignUp" className="sign-in-form__link">

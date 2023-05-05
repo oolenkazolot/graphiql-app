@@ -46,7 +46,7 @@ const SignUpPage: React.FC = () => {
             <span className="error-message">{errors.password.message}</span>
           )}
         </div>
-        <button className="button button_sign-up">Submit</button>
+        <button className="button-auth button-auth_sign-up">Submit</button>
         <div className="sign-up-form__redirect">
           <span className="sign-up-form__text">Already have an account?</span>
           <Link to="/SignIn" className="sign-up-form__link">
