@@ -1,4 +1,4 @@
-import { Routes, Route} from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import MainPage from './pages/mainPage/MainPage';
 import ErrorPage from './pages/errorPage/ErrorPage';
 import SignInPage from './pages/signInPage/SignInPage';
@@ -10,15 +10,14 @@ function App() {
   return (
     <div>
       <Header />
-    <Routes>
-      <Route path="/" element={<WelcomePage />} />
-      <Route path="/SignIn" element={<SignInPage />} />
-      <Route path="/SignUp" element={<SignUpPage />} />
-      <Route path="/Main" element={<MainPage />} />
-      <Route path="*" element={<ErrorPage />} />
-    </Routes>
+      <Routes>
+        <Route path="/" element={<WelcomePage />} />
+        <Route path="/SignIn" element={<SignInPage />} />
+        <Route path="/SignUp" element={<SignUpPage />} />
+        <Route path="/Main" element={<MainPage />} />
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
     </div>
-    
   );
 }
 

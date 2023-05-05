@@ -1,5 +1,5 @@
 import './Header.scss';
-import Navigation from "../navigation/Navigation";
+import Navigation from '../navigation/Navigation';
 import burger from '../../assets/svg/burger_menu.svg';
 import logo from '../../assets/svg/logo.svg';
 import { ReactSVG } from 'react-svg';
@@ -19,14 +19,15 @@ function Header() {
     setOverlayClass('overlay');
   }
 
-
-    return <header className="header">
-      <div className='header__wrapper'>
-        <ReactSVG src={logo} className='logo' />
+  return (
+    <header className="header">
+      <div className="header__wrapper">
+        <ReactSVG src={logo} className="logo" />
         <Navigation navClass={navClass} hideNavigation={hideNavigation} />
-        <ReactSVG src={burger} className='burger' onClick={showNavigation} />
+        <ReactSVG src={burger} className="burger" onClick={showNavigation} />
       </div>
       <div className={overlayClass} onClick={hideNavigation} />
     </header>
-  }
-  export default Header;
+  );
+}
+export default Header;
