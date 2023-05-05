@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './signUpPage.scss';
 
 const SignUpPage: React.FC = () => {
@@ -14,6 +15,10 @@ const SignUpPage: React.FC = () => {
           <input type="password" name="password" id="user-pass" placeholder="Please enter your password"/>
         </div>
         <button className="button button_sign-up">Submit</button>
+        <div className="sign-up-form__redirect">
+          <span className="sign-up-form__text">Already have an account?</span>
+          <Link to="/SignIn" className="sign-up-form__link">Sign In</Link>
+        </div>
       </form>
     </div>
   );
