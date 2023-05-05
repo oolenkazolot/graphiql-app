@@ -44,8 +44,9 @@ label {
   display: block;
   font-size: 22px;
   margin-bottom: 10px;
-  color: $color-pink;
+  color: $color-title;
   font-weight: 400;
+  margin-top: 20px;
 }
 
 input {
@@ -54,7 +55,6 @@ input {
   background-color: $color-input;
   outline: none;
   border: none;
-  margin-bottom: 20px;
   color: $color-white;
   font-size: 18px;
   padding: 0 20px;
@@ -92,4 +92,10 @@ input {
       color: $color-title;
     }
   }
+}
+
+.error-message {
+  font-size: 14px;
+  line-height: 26px;
+  color: $color-pink;
 }
