@@ -1,0 +1,43 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  @include mobile {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  &__sign-in,
+  &__sign-up {
+    background: $color-pink;
+    border-radius: 15px;
+    padding: 0.5rem 0.8rem;
+    border: none;
+    transition: 0.3s ease-out;
+    @include mobile {
+      background: transparent;
+      padding: 0;
+    }
+    &:hover {
+      background: $color-pink-hover;
+      @include mobile {
+        background: transparent;
+      }
+    }
+  }
+}
+
+#sign-in,
+#sign-up {
+  color: white;
+  @include mobile {
+    color: $color-grey;
+    &:hover {
+      color: white;
+    }
+  }
+}
