@@ -1,27 +1,61 @@
 import { Link } from 'react-router-dom';
-import './signInPage.scss'
+import './signInPage.scss';
+import { useForm } from 'react-hook-form';
 
-const SignInPage : React.FC = () => {
+interface SignInValues {
+  email: string;
+  password: string;
+}
+
+const SignInPage: React.FC = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<SignInValues>();
+
+  const handleFormSubmit = (data: SignInValues) => {
+    console.log(data);
+  };
+
   return (
     <div className="sign-in">
-      <form className="sign-in-form">
+      <form className="sign-in-form" onSubmit={handleSubmit(handleFormSubmit)}>
         <h1 className="sign-in-form__title">Sign In</h1>
         <div className="sign-in-form__email-info">
           <label htmlFor="user-email">E-mail</label>
-          <input type="email" name="email" id="user-email" placeholder="Please enter registered e-mail"/>
+          <input
+            type="email"
+            id="user-email"
+            {...register('email', { required: 'This field is mandatory for signing in' })}
+            placeholder="Please enter registered e-mail"
+          />
+          {errors.email?.type === 'required' && (
+            <span className="error-message">{errors.email.message}</span>
+          )}
         </div>
         <div className="sign-in-form__password-info">
           <label htmlFor="user-pass">Password</label>
-          <input type="password" name="password" id="user-pass" placeholder="Please enter your password"/>
+          <input
+            type="password"
+            id="user-pass"
+            {...register('password', { required: 'This field is mandatory for signing in' })}
+            placeholder="Please enter your password"
+          />
+          {errors.password?.type === 'required' && (
+            <span className="error-message">{errors.password.message}</span>
+          )}
         </div>
         <button className="button button_sign-in">Sign In</button>
         <div className="sign-in-form__redirect">
           <span className="sign-in-form__text">Do not have an account yet?</span>
-          <Link to="/SignUp" className="sign-in-form__link">Sign Up</Link>
+          <Link to="/SignUp" className="sign-in-form__link">
+            Sign Up
+          </Link>
         </div>
       </form>
     </div>
   );
-}
+};
 
 export default SignInPage;
