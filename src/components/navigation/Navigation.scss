@@ -1,11 +1,37 @@
 @import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
 .nav {
     font-family: 'Rubik', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 85%;
+    transition: 0.5s ease-out;
+        @include mobile {
+            background-color: $background-dark;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 10px 0px 40px 10px;
+            position: fixed;
+            top: 0;
+            left: 1000px;
+            width: 100vw;
+            z-index: 100;
+        }
     &__ul {
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 1rem;
+        padding: 0;
+        @include mobile {
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
     }
     &__li {
         list-style: none;
@@ -27,3 +53,22 @@
 .active {
     color: white;
 }
+
+.cross {
+    cursor: pointer;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    display: none;
+    @include mobile {
+      display:block;
+    }
+  }
+
+  .nav-visible {
+    left: 0;
+  }
