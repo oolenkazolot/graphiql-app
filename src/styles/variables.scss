@@ -6,6 +6,11 @@ $color-title: #ccd0d3;
 $color-input: #2f404e;
 $color-input-text: #757575;
 $color-white: #ffffff;
+$color-pink-bright: #f6009c; 
+$color-dark-red: #b11a04;
+$color-dark-grey: #555;
+$color-blue: #1f61a0;
+$color-yellow: #ca9800;
 
 // background
 $background-dark: #202020;
@@ -16,6 +21,10 @@ $bg-main-second: #172b3a;
 $hover: 0.7;
 $transition: 0.3s;
 $color-pink-hover: rgba(192, 4, 101, 0.8);
+$welcome-code-gap: 4rem;
+$transition-code-examples: 2.5s;
+$transition-buttons: 0.3s ease-out;
+$transform-duration: translate(0px, 70px);
 
 //screen-sizes
 $mobile-width: 638px;

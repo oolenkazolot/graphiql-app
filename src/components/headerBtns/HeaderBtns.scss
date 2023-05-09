@@ -17,7 +17,7 @@
     border-radius: 15px;
     padding: 0.5rem 0.8rem;
     border: none;
-    transition: 0.3s ease-out;
+    transition: $transition-buttons;
     @include mobile {
       background: transparent;
       padding: 0;

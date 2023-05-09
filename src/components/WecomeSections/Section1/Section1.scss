@@ -1,0 +1,44 @@
+@import '../../../styles/variables.scss';
+
+.section1 {
+    background-color: $background-dark;
+    background-image: url('../../../assets/png/background1.png');
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 7rem;
+    &__wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: $welcome-code-gap;
+    }
+}
+
+.get-started-btn {
+    border-radius: 15px;
+    padding: 0.5rem 0.8rem;
+    border: none;
+    transition: $transition-code-examples;
+    transition-delay: 2.5s;
+    border: 1px solid white;
+    width: 120px;
+    font-size: 17px;
+    font-weight: 300;
+    font-family: "Rubik", sans-serif;
+    align-self: center;
+    margin-top: 5rem;
+    opacity: 1;
+    &:hover {
+        transition: background-color $transition-buttons;
+        background-color: $color-pink;
+        border: 1px solid $background-dark;
+    }
+}
+
+.btn-invisible {
+    transform: $transform-duration;
+    opacity: 0;
+}

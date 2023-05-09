@@ -1,0 +1,56 @@
+@import '../../styles//variables.scss';
+
+
+.code-example {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: $welcome-code-gap;
+    transition: $transition-code-examples;
+    &__title {
+        font-size: 22px;
+        font-weight: 300;
+        margin-bottom: 1rem;
+    }
+    &__code {
+        font-size: 13px;
+        font-weight: 400px;
+        line-height: 17px;
+        font-family: 'Roboto Mono', monospace;
+    }
+    &__block {
+        transition: $transition-code-examples;
+    }
+}
+.red {
+    color: $color-dark-red;
+}
+
+.yellow {
+    color: $color-yellow;
+}
+
+.blue {
+    color: $color-blue;
+}
+
+.grey {
+    color: $color-dark-grey;
+}
+
+.pink {
+    color: #d64292;
+}
+
+#firstBlock {
+    transition-delay: 1s;
+}
+
+#secondBlock {
+    transition-delay: 1.5s;
+}
+
+#thirdBlock {
+    transition-delay: 2s;
+}
