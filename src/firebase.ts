@@ -1,5 +1,5 @@
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { initializeApp } from 'firebase/app';
+import { getAnalytics } from 'firebase/analytics';
 import {
   GoogleAuthProvider,
   getAuth,
@@ -8,48 +8,42 @@ import {
   createUserWithEmailAndPassword,
   sendPasswordResetEmail,
   signOut,
-​​} from "firebase/auth";
-​import {
-  getFirestore,
-  query,
-  getDocs,
-  collection,
-  where,
-  addDoc,
-​​} from "firebase/firestore";
+} from 'firebase/auth';
+import { getFirestore, query, getDocs, collection, where, addDoc } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAcdCCv7BJcpZOsbu5JMOSjtYU1t_RqyVI",
-  authDomain: "graphiql-app-85cfd.firebaseapp.com",
-  projectId: "graphiql-app-85cfd",
-  storageBucket: "graphiql-app-85cfd.appspot.com",
-  messagingSenderId: "741568364286",
-  appId: "1:741568364286:web:3f14b652a1595a8752afaf",
-  measurementId: "G-6L6FCTXCL4"
+  apiKey: 'AIzaSyAcdCCv7BJcpZOsbu5JMOSjtYU1t_RqyVI',
+  authDomain: 'graphiql-app-85cfd.firebaseapp.com',
+  projectId: 'graphiql-app-85cfd',
+  storageBucket: 'graphiql-app-85cfd.appspot.com',
+  messagingSenderId: '741568364286',
+  appId: '1:741568364286:web:3f14b652a1595a8752afaf',
+  measurementId: 'G-6L6FCTXCL4',
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-​​const auth = getAuth(app);
-​​const db = getFirestore(app);
+const auth = getAuth(app);
+const db = getFirestore(app);
 
 const googleProvider = new GoogleAuthProvider();
 const signInWithGoogle = async () => {
   try {
     const res = await signInWithPopup(auth, googleProvider);
     const user = res.user;
-    const q = query(collection(db, "users"), where("uid", "==", user.uid));
+    const q = query(collection(db, 'users'), where('uid', '==', user.uid));
     const docs = await getDocs(q);
     if (docs.docs.length === 0) {
-      await addDoc(collection(db, "users"), {
+      await addDoc(collection(db, 'users'), {
         uid: user.uid,
         name: user.displayName,
-        authProvider: "google",
+        authProvider: 'google',
         email: user.email,
       });
     }
-  } catch (err: any) { //temporary
+  } catch (err: any) {
+    //temporary
     console.error(err);
     alert(err.message);
   }
@@ -57,22 +51,23 @@ const signInWithGoogle = async () => {
 const logInWithEmailAndPassword = async (email: string, password: string) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
-  } catch (err: any) { //temporary
+  } catch (err: any) {
+    //temporary
     console.error(err);
     alert(err.message);
   }
 };
-const registerWithEmailAndPassword = async (name: string, email: string, password: string) => {
+const registerWithEmailAndPassword = async (email: string, password: string) => {
   try {
     const res = await createUserWithEmailAndPassword(auth, email, password);
     const user = res.user;
-    await addDoc(collection(db, "users"), {
+    await addDoc(collection(db, 'users'), {
       uid: user.uid,
-      name,
-      authProvider: "local",
+      authProvider: 'local',
       email,
     });
-  } catch (err: any) { //temporary
+  } catch (err: any) {
+    //temporary
     console.error(err);
     alert(err.message);
   }
@@ -80,8 +75,9 @@ const registerWithEmailAndPassword = async (name: string, email: string, passwor
 const sendPasswordReset = async (email: string) => {
   try {
     await sendPasswordResetEmail(auth, email);
-    alert("Password reset link sent!");
-  } catch (err: any) { //temporary
+    alert('Password reset link sent!');
+  } catch (err: any) {
+    //temporary
     console.error(err);
     alert(err.message);
   }

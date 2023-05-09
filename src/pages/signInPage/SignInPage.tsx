@@ -1,6 +1,9 @@
-import { Link } from 'react-router-dom';
 import './signInPage.scss';
 import { useForm } from 'react-hook-form';
+import { Link, useNavigate } from 'react-router-dom';
+import { auth, logInWithEmailAndPassword } from '../../firebase';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useEffect } from 'react';
 
 interface SignInValues {
   email: string;
@@ -13,9 +16,18 @@ const SignInPage: React.FC = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<SignInValues>();
+  const [user, loading, error] = useAuthState(auth);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (loading) return;
+    if (user) navigate('/Main');
+  }, [user, loading]);
 
   const handleFormSubmit = (data: SignInValues) => {
     console.log(data);
+    const { email, password } = data;
+    logInWithEmailAndPassword(email, password);
   };
 
   return (
