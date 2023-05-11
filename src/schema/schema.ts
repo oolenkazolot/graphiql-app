@@ -1,6 +1,16 @@
 import { GRAPHQL_API_URL } from '../constants';
 
-export async function makeRequest(query: string) {
+const query = `
+  query {
+    __schema {
+      types {
+        name
+      }
+    }
+  }
+`;
+
+export async function getGraphQLSchema() {
   try {
     const response = await fetch(GRAPHQL_API_URL, {
       method: 'POST',
@@ -10,6 +20,7 @@ export async function makeRequest(query: string) {
       body: JSON.stringify({ query }),
     });
     const data = await response.json();
+
     return data;
   } catch (e) {
     if (e instanceof Error) {
