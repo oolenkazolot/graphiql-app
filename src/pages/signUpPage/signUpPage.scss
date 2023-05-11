@@ -45,8 +45,8 @@
   }
 }
 
-label[for="user-email"],
-label[for="user-pass"] {
+label[for='user-email'],
+label[for='user-pass'] {
   display: block;
   font-size: 22px;
   margin-bottom: 10px;
@@ -56,7 +56,7 @@ label[for="user-pass"] {
 }
 
 #user-email,
-#user-pass{
+#user-pass {
   width: 100%;
   height: 60px;
   background-color: $color-input;
