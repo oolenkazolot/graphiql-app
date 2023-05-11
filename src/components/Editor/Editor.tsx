@@ -6,7 +6,6 @@ import { tags as t } from '@lezer/highlight';
 import './Editor.scss';
 // import { getGraphQLSchema } from '../../schema/schema';
 // import graphqlHint from 'codemirror-graphql/hint';
-import 'codemirror-graphql/mode';
 
 type TRequest = {
   onChangeHandler: (value: string) => void;
