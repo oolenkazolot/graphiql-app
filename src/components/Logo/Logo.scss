@@ -1,4 +1,5 @@
 @import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
 
 .logo-welcome {
     display: flex;
@@ -11,11 +12,20 @@
     &__svg {
         width: 90px;
         height: 90px;
+
+        @include mobile {
+            width: 70px;
+            height: 70px;
+        }
     }
     &__title {
         font-size: 30px;
         color: $color-pink-bright;
         font-weight: 300;
+
+        @include mobile {
+            font-size: 26px;
+        }
     }
 }
 

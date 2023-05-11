@@ -17,6 +17,10 @@
   @media (max-width: $small-desktop-width) { @content; }
 }
 
+@mixin tablet {
+  @media (max-width: $tablet-width) { @content; }
+}
+
 @mixin welcome-h2($color) {
   font-size: 30px;
   line-height: 42px;

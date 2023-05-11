@@ -26,9 +26,13 @@ $hover: 0.7;
 $transition: 0.3s;
 $color-pink-hover: rgba(192, 4, 101, 0.8);
 $welcome-code-gap: 4rem;
+$tablet-gap: 2rem;
+$mobile-gap: 1rem;
 $transition-code-examples: 2.5s;
 $transition-buttons: 0.3s ease-out;
 $transform-duration: translate(0px, 70px);
 
 //screen-sizes
 $mobile-width: 638px;
+$small-desktop-width: 1150px;
+$tablet-width: 980px;
