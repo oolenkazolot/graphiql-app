@@ -13,6 +13,10 @@
   }
 }
 
+@mixin small-desktop {
+  @media (max-width: $small-desktop-width) { @content; }
+}
+
 @mixin welcome-h2($color) {
   font-size: 30px;
   line-height: 42px;

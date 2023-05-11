@@ -37,9 +37,13 @@
         position: relative;
         border-radius: 7px;
         box-shadow: 0 0 2px 1px #e6e8ec, 0 4px 8px #555;
-        transition: box-shadow .3s cubic-bezier(.4,0,.2,1) 0s;
         color: #000;
         background-color: white;
+        transition: 0.5s;
+        &:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 4px 2px #e6e8ec, 0 8px 12px #555;
+        }
     }
 
     &__name {
