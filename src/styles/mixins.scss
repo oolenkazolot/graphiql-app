@@ -30,7 +30,7 @@
 }
 
 @mixin welcome-wrapper($padding) {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -42,5 +42,5 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: align;
+  align-items: $align;
 }

@@ -5,11 +5,12 @@
     background-color: $bg-light-grey;
     &__wrapper {
         @include welcome-wrapper(5rem 2rem);
+        align-items: start;
     }
     &__block1, 
     &__block2 {
         width: 45%;
-        @include positioning(center);
+        @include positioning(normal);
     }
     &__h2 {
         @include welcome-h2($background-dark);

@@ -5,6 +5,7 @@ import TaskInfo from '../../components/WecomeSections/TaskInfo/TaskInfo';
 import ThirdSection from '../../components/WecomeSections/ThirdSection/ThirdSection';
 import FourthSection from '../../components/WecomeSections/FourthSection/FourthSection';
 import FifthSection from '../../components/WecomeSections/FifthSection/FifthSection';
+import Developers from '../../components/WecomeSections/Developers/Developers';
 
 function WelcomePage() {
   
@@ -15,6 +16,7 @@ function WelcomePage() {
       <ThirdSection />
       <FourthSection />
       <FifthSection />
+      <Developers />
     </>
   );
 }
