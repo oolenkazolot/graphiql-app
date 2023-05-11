@@ -1,0 +1,35 @@
+@import '../../../styles/variables.scss';
+
+.fifth-section {
+    background-color: $bg-darkWash;
+
+    &__wrapper {
+        max-width: 1200px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5rem 2rem;
+        margin: 0 auto;
+    }
+
+    &__block1, 
+    &__block2 {
+        width: 45%;
+    }
+
+    &__h2 {
+        font-size: 30px;
+        line-height: 42px;
+        color: white;
+        font-weight: 300;
+        text-align: center;
+    }
+
+    &__p {
+        font-size: 20px;
+        font-weight: 300;
+        color: white;
+        padding: 1rem;
+        line-height: 35.2px;
+    }
+}
