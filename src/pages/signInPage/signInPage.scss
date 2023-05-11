@@ -1,0 +1,47 @@
+@import '../../styles/variables.scss';
+
+.sign-in {
+  width: 100%;
+  height: calc(100vh - 65px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $bg-main-second;
+}
+
+.sign-in-form {
+  width: 60%;
+  height: fit-content;
+  padding: 20px 30px;
+  border: 2px solid $color-pink;
+  border-radius: 15px;
+
+  &__title {
+    color: $color-title;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  &__redirect {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__text {
+    font-size: 18px;
+    color: $color-title;
+    padding-right: 10px;
+  }
+
+  &__link {
+    font-size: 18px;
+    font-weight: 500;
+    color: $color-pink;
+    transition: $transition;
+
+    &:hover {
+      color: $color-pink-hover;
+    }
+  }
+}
+
