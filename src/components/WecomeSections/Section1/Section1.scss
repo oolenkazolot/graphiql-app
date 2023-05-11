@@ -1,18 +1,13 @@
 @import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
 
 .section1 {
     background-color: $background-dark;
     background-image: url('../../../assets/png/background1.png');
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    @include positioning(normal);
     padding: 10rem 7rem 5rem 7rem;
     &__wrapper {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include welcome-wrapper(0);
         gap: $welcome-code-gap;
     }
 }

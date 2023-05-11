@@ -1,4 +1,5 @@
 @import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
 
 .fourth-section {
     background-color: $bg-grey;
@@ -8,34 +9,21 @@
     }
 
     &__wrapper {
-        max-width: 1200px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 7rem;
-        margin: 0 auto;
+        @include welcome-wrapper(7rem);
     }
 
     &__h2 {
-        font-size: 30px;
-        line-height: 42px;
-        color: $background-dark;
-        font-weight: 300;
-        margin-bottom: 1rem;
+        @include welcome-h2($background-dark);
     }
 
     &__p {
-        font-size: 18px;
-        font-weight: 300;
-        line-height: 28.8px;
-        color: $background-dark;
+       @include welcome-p($background-dark);
     }
 
     &__block2 {
         position: relative;
         height: 500px;
         margin: -40px -15px;
-        position: relative;
         width: 476px;
     }
 

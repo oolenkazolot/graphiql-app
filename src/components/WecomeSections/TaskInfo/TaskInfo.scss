@@ -1,17 +1,14 @@
 @import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
 
 .task-info {
     background: url('../../../assets/png/background2.png');
     font-family:  "Rubik", sans-serif;
     
     &__wrapper {
-        display: flex;
-        justify-content: space-between;
-        max-width: 1200px;
+        @include welcome-wrapper(0.5rem 2rem);
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         color: white;
-        margin: 0 auto;
-        padding: 0.5rem 2rem;
     }
     
     &__h1 {
@@ -23,14 +20,10 @@
     }
     
     &__block {
-        display: flex;
-        flex-direction: column;
+        @include positioning(center);
         padding: 1rem;
         font-size: 28px;
         font-weight: 700;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         gap: 1rem;
         letter-spacing: 1.5px;
     }
