@@ -2,6 +2,7 @@ import CodeMirror from '@uiw/react-codemirror';
 import { javascript } from '@codemirror/lang-javascript';
 import { createTheme } from '@uiw/codemirror-themes';
 import { tags as t } from '@lezer/highlight';
+import { tabulateJSON } from '../../utils/tabulateJSON';
 import './Response.scss';
 const mainClass = 'response';
 
@@ -9,7 +10,7 @@ const myTheme = createTheme({
   theme: 'light',
   settings: {
     background: '#172b3a',
-    foreground: '#75baff',
+    foreground: '#f52891cc',
     caret: '#5d00ff',
     selection: '#036dd626',
     selectionMatch: '#036dd626',
@@ -34,6 +35,7 @@ const myTheme = createTheme({
     { tag: t.attributeName, color: '#5c6166' },
   ],
 });
+
 const extensions = [javascript({ jsx: true })];
 
 type TResponse = {
@@ -48,7 +50,7 @@ function Response({ response }: TResponse) {
         theme={myTheme}
         extensions={extensions}
         readOnly={true}
-        value={response}
+        value={tabulateJSON(response)}
       />
     </section>
   );
