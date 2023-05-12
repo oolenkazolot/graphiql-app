@@ -1,0 +1,71 @@
+@import '../../styles//variables.scss';
+@import '../../styles/mixins.scss';
+
+.code-example {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  gap: $welcome-code-gap;
+  @include tablet {
+    flex-direction: column;
+    align-items: center;
+    gap: $tablet-gap;
+  }
+  transition: $transition-code-examples;
+  &__title {
+    font-size: 22px;
+    font-weight: 300;
+    margin-bottom: 1rem;
+
+    @include mobile {
+      font-size: 20px;
+    }
+  }
+  &__code {
+    font-size: 13px;
+    font-weight: 400px;
+    line-height: 17px;
+    font-family: 'Roboto Mono', monospace;
+
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+  &__block {
+    transition: $transition-code-examples;
+    @include tablet {
+      @include positioning(center);
+    }
+  }
+}
+.red {
+  color: $color-dark-red;
+}
+
+.yellow {
+  color: $color-yellow;
+}
+
+.blue {
+  color: $color-blue;
+}
+
+.grey {
+  color: $color-dark-grey;
+}
+
+.pink {
+  color: $color-pink-code;
+}
+
+#firstBlock {
+  transition-delay: 1s;
+}
+
+#secondBlock {
+  transition-delay: 1.5s;
+}
+
+#thirdBlock {
+  transition-delay: 2s;
+}
