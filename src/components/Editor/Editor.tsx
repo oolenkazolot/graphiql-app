@@ -1,10 +1,11 @@
-import { useCallback } from 'react';
+import { useCallback /*useEffect, useRef*/ } from 'react';
 import CodeMirror from '@uiw/react-codemirror';
 import { javascript } from '@codemirror/lang-javascript';
 import { createTheme } from '@uiw/codemirror-themes';
 import { tags as t } from '@lezer/highlight';
 import './Editor.scss';
-const mainClass = 'editor';
+// import { getGraphQLSchema } from '../../schema/schema';
+// import graphqlHint from 'codemirror-graphql/hint';
 
 type TRequest = {
   onChangeHandler: (value: string) => void;
@@ -14,7 +15,7 @@ const myTheme = createTheme({
   theme: 'light',
   settings: {
     background: '#0f202d',
-    foreground: '#75baff',
+    foreground: '#f52891cc',
     caret: '#5d00ff',
     selection: '#036dd626',
     selectionMatch: '#036dd626',
@@ -39,18 +40,38 @@ const myTheme = createTheme({
     { tag: t.attributeName, color: '#5c6166' },
   ],
 });
+
 const extensions = [javascript({ jsx: true })];
 
 function Editor({ onChangeHandler }: TRequest) {
+  // const editorRef = useRef<CodeMirror.Editor | null>(null);
+
+  // useEffect(() => {
+  //   const fetchSchema = async () => {
+  //     const schema = await getGraphQLSchema();
+  //     if (editorRef.current?.setOption && schema) {
+  //       editorRef.current.setOption('hintOptions', { schema: schema.data });
+  //     }
+  //   };
+  //   fetchSchema();
+  // }, []);
+
   const onChange = useCallback(
     (value: string) => {
       onChangeHandler(value);
     },
     [onChangeHandler]
   );
+
   return (
-    <section className={mainClass}>
-      <CodeMirror height="500px" theme={myTheme} extensions={extensions} onChange={onChange} />
+    <section className="editor">
+      <CodeMirror
+        // ref={editorRef}
+        height="500px"
+        theme={myTheme}
+        extensions={extensions}
+        onChange={onChange}
+      />
     </section>
   );
 }
