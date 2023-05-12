@@ -6,14 +6,14 @@ import { useState, useEffect } from 'react';
 
 function Section1() {
   const [getStartedClass, setGetStartedClass] = useState('get-started-btn btn-invisible');
-  
+
   useEffect(() => {
     setGetStartedClass('get-started-btn');
   }, []);
-  
+
   return (
     <section className="section1">
-      <div className='section1__wrapper'>
+      <div className="section1__wrapper">
         <Logo />
         <CodeExamples />
       </div>

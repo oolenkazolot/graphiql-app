@@ -2,74 +2,74 @@
 @import '../../../styles/mixins.scss';
 
 .task-info {
-    background: url('../../../assets/png/background2.png');
-    font-family:  "Rubik", sans-serif;
-    
-    &__wrapper {
-        @include welcome-wrapper(0.5rem 2rem);
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        color: white;
-        justify-content: space-around;
+  background: url('../../../assets/png/background2.png');
+  font-family: 'Rubik', sans-serif;
 
-        @include mobile {
-            padding: 0.5rem 0.5rem;
-        }
+  &__wrapper {
+    @include welcome-wrapper(0.5rem 2rem);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    justify-content: space-around;
+
+    @include mobile {
+      padding: 0.5rem 0.5rem;
     }
-    
-    &__h1 {
-        padding: 1rem;
-        font-size: 32px;
-        letter-spacing: 1.5px;
-        display: flex;
-        align-items: center;
+  }
 
-        @include tablet {
-            font-size: 28px;
-        }
+  &__h1 {
+    padding: 1rem;
+    font-size: 32px;
+    letter-spacing: 1.5px;
+    display: flex;
+    align-items: center;
 
-        @include mobile {
-            font-size: 16px;
-        }
-    }
-    
-    &__block {
-        @include positioning(center);
-        font-size: 28px;
-        font-weight: 700;
-        gap: 1rem;
-        letter-spacing: 1.5px;
-        justify-content: start;
-
-        @include tablet {
-            font-size: 24px;
-        }
-
-        @include mobile {
-            font-size: 14px;
-            gap: 0.5rem;
-        }
+    @include tablet {
+      font-size: 28px;
     }
 
-    &__RS {
-        transition: $transition;
-        &:hover {
-            color: $color-pink-bright;
-        }
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+
+  &__block {
+    @include positioning(center);
+    font-size: 28px;
+    font-weight: 700;
+    gap: 1rem;
+    letter-spacing: 1.5px;
+    justify-content: start;
+
+    @include tablet {
+      font-size: 24px;
     }
 
-    &__year {
-        font-size: 18px;
+    @include mobile {
+      font-size: 14px;
+      gap: 0.5rem;
+    }
+  }
 
-        @include mobile {
-            font-size: 14px;
-        }
+  &__RS {
+    transition: $transition;
+    &:hover {
+      color: $color-pink-bright;
     }
-    
-    &__link {
-        color: white;
-        transition: $transition;
-        &:hover {
-            color: $color-pink-bright;
-        }
+  }
+
+  &__year {
+    font-size: 18px;
+
+    @include mobile {
+      font-size: 14px;
     }
+  }
+
+  &__link {
+    color: white;
+    transition: $transition;
+    &:hover {
+      color: $color-pink-bright;
+    }
+  }
 }

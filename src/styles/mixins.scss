@@ -14,11 +14,15 @@
 }
 
 @mixin small-desktop {
-  @media (max-width: $small-desktop-width) { @content; }
+  @media (max-width: $small-desktop-width) {
+    @content;
+  }
 }
 
 @mixin tablet {
-  @media (max-width: $tablet-width) { @content; }
+  @media (max-width: $tablet-width) {
+    @content;
+  }
 }
 
 @mixin welcome-h2($color) {

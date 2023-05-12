@@ -2,205 +2,203 @@
 @import '../../../styles/mixins.scss';
 
 .fourth-section {
-    background-color: $bg-grey;
+  background-color: $bg-grey;
 
-    &__block1 {
-        max-width: 415px;
+  &__block1 {
+    max-width: 415px;
 
-        @include small-desktop {
-             max-width:fit-content;
-        }
+    @include small-desktop {
+      max-width: fit-content;
+    }
+  }
+
+  &__wrapper {
+    @include welcome-wrapper(7rem);
+
+    @include small-desktop {
+      flex-direction: column;
+      gap: 4rem;
     }
 
-    &__wrapper {
-        @include welcome-wrapper(7rem);
-
-        @include small-desktop {
-            flex-direction:column;
-            gap: 4rem;
-        }
-
-        @include tablet {
-            padding: 3rem 3rem 7rem 3rem;
-        }
-
-        @include mobile {
-            padding: 2rem 1rem;
-            gap: 4rem;
-        }
-
+    @include tablet {
+      padding: 3rem 3rem 7rem 3rem;
     }
 
-    &__h2 {
-        @include welcome-h2($background-dark);
-
-        @include mobile {
-            font-size: 26px;
-        }
+    @include mobile {
+      padding: 2rem 1rem;
+      gap: 4rem;
     }
+  }
 
-    &__p {
-       @include welcome-p($background-dark);
-       @include mobile {
-        font-size: 18px;
-        padding: 0;
+  &__h2 {
+    @include welcome-h2($background-dark);
+
+    @include mobile {
+      font-size: 26px;
     }
+  }
+
+  &__p {
+    @include welcome-p($background-dark);
+    @include mobile {
+      font-size: 18px;
+      padding: 0;
     }
+  }
 
-    &__block2 {
-        position: relative;
-        height: 500px;
-        margin: -40px -15px;
-        width: 476px;
+  &__block2 {
+    position: relative;
+    height: 500px;
+    margin: -40px -15px;
+    width: 476px;
 
-        @include mobile {
-            margin: 0;
-            @include positioning(center);
-            height: 350px;
-            width: auto;
-        }
+    @include mobile {
+      margin: 0;
+      @include positioning(center);
+      height: 350px;
+      width: auto;
     }
+  }
 
-    &__server {
-        width: 496px;
-        aspect-ratio: auto 496 / 440;
-        height: 440px;
-        position: absolute;
-        left: 0;
-        right: 0;
+  &__server {
+    width: 496px;
+    aspect-ratio: auto 496 / 440;
+    height: 440px;
+    position: absolute;
+    left: 0;
+    right: 0;
 
-        @include mobile {
-            width: 250px;
-            left: auto;
-            right: auto;
-        }
+    @include mobile {
+      width: 250px;
+      left: auto;
+      right: auto;
     }
+  }
 
-    &__phone {
-        width: 496px;
-        aspect-ratio: auto 496 / 440;
-        height: 440px;
-        position: absolute;
-        top: 100px;
+  &__phone {
+    width: 496px;
+    aspect-ratio: auto 496 / 440;
+    height: 440px;
+    position: absolute;
+    top: 100px;
 
-        @include mobile {
-            width: 250px;
-        }
+    @include mobile {
+      width: 250px;
     }
+  }
 
-    &__code-wrap {
-        display: flex;
-        justify-content: center;
+  &__code-wrap {
+    display: flex;
+    justify-content: center;
 
-        @include mobile {
-            font-size: 12px;
-        }
+    @include mobile {
+      font-size: 12px;
     }
+  }
 }
 
 @keyframes moveUp {
-    0% {
-        top: 300px;
-        opacity: 0;
-    }
-    25% {
-        opacity: 1;
-    }
-    50% {
-        top: 150px;
-        opacity: 0;
-    }
-    100% {
-        top: 150px;
-        opacity: 0;
-    }
+  0% {
+    top: 300px;
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    top: 150px;
+    opacity: 0;
+  }
+  100% {
+    top: 150px;
+    opacity: 0;
+  }
 }
 
 @keyframes moveUpMobile {
-    0% {
-        top: 150px;
-        opacity: 0;
-    }
-    25% {
-        opacity: 1;
-    }
-    50% {
-        top: 0px;
-        opacity: 0;
-    }
-    100% {
-        top: 0px;
-        opacity: 0;
-    }
+  0% {
+    top: 150px;
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    top: 0px;
+    opacity: 0;
+  }
+  100% {
+    top: 0px;
+    opacity: 0;
+  }
 }
 
 .fourth-section__request {
-    position:absolute;
-    top: 300px;
-    opacity: 0;
-    animation: moveUp 10s linear infinite;
+  position: absolute;
+  top: 300px;
+  opacity: 0;
+  animation: moveUp 10s linear infinite;
 
-    @include mobile {
-        top: 150px;
-        animation: moveUpMobile 10s linear infinite;
-    }
-
+  @include mobile {
+    top: 150px;
+    animation: moveUpMobile 10s linear infinite;
+  }
 }
 
 @keyframes moveDown {
-    0% {
-        top: 150px;
-        opacity: 0;
-    }
-    25% {
-        opacity: 1;
-    }
-    50% {
-        top: 300px;
-        opacity: 0;
-    }
-    100% {
-        top: 300px;
-        opacity: 0;
-    }
+  0% {
+    top: 150px;
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    top: 300px;
+    opacity: 0;
+  }
+  100% {
+    top: 300px;
+    opacity: 0;
+  }
 }
 
 @keyframes moveDownMobile {
-    0% {
-        top: 0px;
-        opacity: 0;
-    }
-    25% {
-        opacity: 1;
-    }
-    50% {
-        top: 150px;
-        opacity: 0;
-    }
-    100% {
-        top: 150px;
-        opacity: 0;
-    }
+  0% {
+    top: 0px;
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    top: 150px;
+    opacity: 0;
+  }
+  100% {
+    top: 150px;
+    opacity: 0;
+  }
 }
 
 .fourth-section__response {
-    position:absolute;
-    top: 150px;
-    opacity: 0;
-    animation: moveDown 10s linear infinite;
-    animation-delay: 5s;
+  position: absolute;
+  top: 150px;
+  opacity: 0;
+  animation: moveDown 10s linear infinite;
+  animation-delay: 5s;
 
-    @include mobile {
-        top: 0px;
-        animation: moveDownMobile 10s linear infinite;
-        animation-delay: 5s;
-    }
+  @include mobile {
+    top: 0px;
+    animation: moveDownMobile 10s linear infinite;
+    animation-delay: 5s;
+  }
 }
 
 .pink-code {
-    color: $color-pink-code;
+  color: $color-pink-code;
 }
 
 .blue-code {
-    color: $color-blue;
+  color: $color-blue;
 }

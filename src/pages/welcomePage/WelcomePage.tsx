@@ -1,4 +1,4 @@
-import './WelcomePage.scss'
+import './WelcomePage.scss';
 import '../../components/Logo/Logo.scss';
 import Section1 from '../../components/WecomeSections/Section1/Section1';
 import TaskInfo from '../../components/WecomeSections/TaskInfo/TaskInfo';
@@ -8,7 +8,6 @@ import FifthSection from '../../components/WecomeSections/FifthSection/FifthSect
 import Developers from '../../components/WecomeSections/Developers/Developers';
 
 function WelcomePage() {
-  
   return (
     <>
       <Section1 />
