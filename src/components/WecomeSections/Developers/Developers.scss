@@ -12,12 +12,20 @@
         max-width: 1200px;
         margin: 0 auto;
         padding: 5rem 0rem;
+
+        @include mobile {
+            padding: 2rem 0rem;
+        }
     }
 
     &__h2 {
         @include welcome-h2($bg-darkWash);
         font-size: 46px;
         margin-bottom: 3rem;
+
+        @include mobile {
+            margin-bottom: 1rem;
+        }
     }
 }
 .cards {
@@ -29,6 +37,16 @@
         margin-top: 20px;
         justify-content: space-around;
         align-items: center;
+
+        @include small-desktop {
+            gap: 0px;
+        }
+
+        @include mobile {
+            @include positioning(center);
+            gap: 1.5rem;
+        }
+
     }
 
     &__card {
@@ -61,6 +79,18 @@
         height: 255px;
         margin: 0 auto 10px 0;
         border-radius: 5px;
+
+        @include small-desktop {
+            height: 245px;
+        }
+
+        @include tablet {
+            height: 150px;
+        }
+
+        @include mobile {
+            height: 250px;
+        }
     }
 
     &__img {
@@ -80,6 +110,10 @@
 
 .rotate {
     transform: rotate(10deg);
+
+    @include tablet {
+        transform: rotate(0deg);
+    }
 }
 
 .gitHubLink {
