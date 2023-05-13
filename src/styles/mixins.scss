@@ -56,3 +56,9 @@
   justify-content: space-around;
   align-items: $align;
 }
+
+@mixin font-settings($color) {
+        font-size: 15px;
+        font-weight: 300;
+        color: $color;
+}
