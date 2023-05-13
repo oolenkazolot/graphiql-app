@@ -2,6 +2,7 @@
 @import '../../../styles/mixins.scss';
 
 .section1 {
+  margin-top: 66px;
   background-color: $background-dark;
   background-image: url('../../../assets/png/background1.png');
   @include positioning(normal);
@@ -17,6 +18,7 @@
 
   @include mobile {
     padding: 1rem 0;
+    margin-top: 46px;
   }
 
   &__wrapper {
