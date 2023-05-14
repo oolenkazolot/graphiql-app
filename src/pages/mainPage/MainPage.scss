@@ -1,4 +1,10 @@
+@import '../../styles/mixins.scss';
+
 .main-page {
+  margin-top: 66px;
+  @include mobile {
+    margin-top: 46px;
+  }
   &__editor {
     display: flex;
     justify-content: space-between;

@@ -6,6 +6,7 @@ import SignUpPage from './pages/signUpPage/SignUpPage';
 import WelcomePage from './pages/welcomePage/WelcomePage';
 import Header from './components/header/Header';
 import './index.scss';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/Main" element={<MainPage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
