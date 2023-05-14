@@ -2,11 +2,15 @@
 
 .sign-up {
   width: 100%;
-  height: calc(100vh - 65px);
+  min-height: calc(100vh - 65px);
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: $bg-main-second;
+
+  @media all and (max-width: $mobile-width) {
+    min-height: calc(100vh - 45px);
+  }
 }
 
 .sign-up-form {
@@ -16,10 +20,23 @@
   border: 2px solid $color-pink;
   border-radius: 15px;
 
+  @media all and (max-width: 1000px) {
+    width: 80%;
+  }
+
+  @media all and (max-width: $mobile-width) {
+    padding: 15px;
+  }
+
   &__title {
     color: $color-title;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     text-align: center;
+
+    @media all and (max-width: $mobile-width) {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
   }
 
   &__redirect {
@@ -31,6 +48,11 @@
     font-size: 18px;
     color: $color-title;
     padding-right: 10px;
+
+    @media all and (max-width: $mobile-width) {
+      font-size: 12px;
+      padding-right: 5px;
+    }
   }
 
   &__link {
@@ -39,6 +61,10 @@
     color: $color-pink;
     transition: $transition;
 
+    @media all and (max-width: $mobile-width) {
+      font-size: 12px;
+    }
+
     &:hover {
       color: $color-pink-hover;
     }
@@ -46,23 +72,36 @@
 }
 
 label[for='user-email'],
-label[for='user-pass'] {
+label[for='user-pass'],
+label[for='user-confirm-pass'] {
   display: block;
-  font-size: 22px;
-  margin-bottom: 10px;
+  font-size: 20px;
+  margin-bottom: 5px;
   color: $color-title;
   font-weight: 400;
-  margin-top: 20px;
+  margin-top: 15px;
+
+  @media all and (max-width: $mobile-width) {
+    font-size: 14px;
+  }
 }
 
 #user-email,
-#user-pass {
+#user-pass,
+#user-confirm-pass {
   width: 100%;
-  height: 60px;
+  height: 50px;
   background-color: $color-input;
   color: $color-white;
   font-size: 18px;
   padding: 0 20px;
+  border-radius: 3px;
+
+  @media all and (max-width: $mobile-width) {
+    height: 35px;
+    font-size: 12px;
+    padding: 0 10px;
+  }
 
   &:focus {
     outline: none;
@@ -86,6 +125,13 @@ label[for='user-pass'] {
   border-radius: 5px;
   font-family: 'Rubik', sans-serif;
 
+  @media all and (max-width: $mobile-width) {
+    width: 110px;
+    height: 35px;
+    font-size: 14px;
+    margin: 20px auto 20px;
+  }
+
   &:hover {
     background-color: $color-pink-hover;
     color: $color-title;
@@ -96,4 +142,26 @@ label[for='user-pass'] {
   font-size: 14px;
   line-height: 26px;
   color: $color-pink;
+
+  @media all and (max-width: $mobile-width) {
+    font-size: 11px;
+    line-height: 18px;
+  }
+}
+
+.response-error {
+  width: 100%;
+  height: 30px;
+  background-color: $color-pink;
+  color: $color-title;
+  text-align: left;
+  padding-left: 20px;
+  border-radius: 3px;
+  font-size: 16px;
+  line-height: 30px;
+
+  @media all and (max-width: $mobile-width) {
+    font-size: 12px;
+    padding-left: 10px;
+  }
 }

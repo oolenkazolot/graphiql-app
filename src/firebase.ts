@@ -5,6 +5,7 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   signOut,
+  User,
 } from 'firebase/auth';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 
@@ -20,41 +21,32 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
 const logInWithEmailAndPassword = async (email: string, password: string) => {
-  try {
-    await signInWithEmailAndPassword(auth, email, password);
-  } catch (err) {
-    if(err instanceof Error) {
-      console.error(err);
-      alert(err.message);
-    }  
-  }
+  await signInWithEmailAndPassword(auth, email, password);
 };
 
 const registerWithEmailAndPassword = async (email: string, password: string) => {
-  try {
-    const res = await createUserWithEmailAndPassword(auth, email, password);
-    const user = res.user;
-    await addDoc(collection(db, 'users'), {
-      uid: user.uid,
-      authProvider: 'local',
-      email,
-    });
-  } catch (err) {
-    if(err instanceof Error) {
-      console.error(err);
-      alert(err.message);
-    } 
-  }
+  const res = await createUserWithEmailAndPassword(auth, email, password);
+  const user = res.user;
+  await addDoc(collection(db, 'users'), {
+    uid: user.uid,
+    authProvider: 'local',
+    email,
+  });
 };
 
 const logout = () => {
   signOut(auth);
+  localStorage.removeItem('sessionToken');
 };
+
+export const setToken = async(user: User) => {
+  const userToken = await user.getIdToken();
+  localStorage.setItem('sessionToken', userToken);
+}
 
 export {
   auth,
