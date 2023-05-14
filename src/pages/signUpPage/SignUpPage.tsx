@@ -53,7 +53,7 @@ const SignUpPage: React.FC = () => {
         <h1 className="sign-up-form__title">Sign Up</h1>
         {authError && <div className="response-error">{authError}</div>}
         <div className="sign-up-form__email-info">
-          <label htmlFor="user-email">E-mail</label>
+          <label htmlFor="user-email">E-mail:</label>
           <input
             type="email"
             id="user-email"
@@ -65,7 +65,7 @@ const SignUpPage: React.FC = () => {
           )}
         </div>
         <div className="sign-up-form__password-info">
-          <label htmlFor="user-pass">Password</label>
+          <label htmlFor="user-pass">Password:</label>
           <input
             type="password"
             id="user-pass"
@@ -83,7 +83,7 @@ const SignUpPage: React.FC = () => {
           )}
         </div>
         <div className="sign-up-form__confirm-password-info">
-          <label htmlFor="user-confirm-pass">Confirm password</label>
+          <label htmlFor="user-confirm-pass">Confirm password:</label>
           <input
             type="password"
             id="user-confirm-pass"

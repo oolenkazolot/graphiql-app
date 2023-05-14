@@ -48,7 +48,7 @@ const SignInPage: React.FC = () => {
         <h1 className="sign-in-form__title">Sign In</h1>
         {signInError && <div className="response-error">{signInError}</div>}
         <div className="sign-in-form__email-info">
-          <label htmlFor="user-email">E-mail</label>
+          <label htmlFor="user-email">E-mail:</label>
           <input
             type="email"
             id="user-email"
@@ -60,7 +60,7 @@ const SignInPage: React.FC = () => {
           )}
         </div>
         <div className="sign-in-form__password-info">
-          <label htmlFor="user-pass">Password</label>
+          <label htmlFor="user-pass">Password:</label>
           <input
             type="password"
             id="user-pass"

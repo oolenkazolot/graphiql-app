@@ -32,6 +32,7 @@
     color: $color-title;
     margin-bottom: 20px;
     text-align: center;
+    font-weight: 700;
 
     @media all and (max-width: $mobile-width) {
       font-size: 22px;
@@ -60,6 +61,7 @@
     font-weight: 500;
     color: $color-pink;
     transition: $transition;
+    font-weight: 700;
 
     @media all and (max-width: $mobile-width) {
       font-size: 12px;
@@ -78,7 +80,7 @@ label[for='user-confirm-pass'] {
   font-size: 20px;
   margin-bottom: 5px;
   color: $color-title;
-  font-weight: 400;
+  font-weight: 500;
   margin-top: 15px;
 
   @media all and (max-width: $mobile-width) {
@@ -120,10 +122,9 @@ label[for='user-confirm-pass'] {
   background-color: $color-pink;
   color: $bg-main-second;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 700;
   transition: $transition;
   border-radius: 5px;
-  font-family: 'Rubik', sans-serif;
 
   @media all and (max-width: $mobile-width) {
     width: 110px;
