@@ -32,7 +32,8 @@
 }
 
 #sign-in,
-#sign-up {
+#sign-up,
+#log-out {
   color: white;
   @include mobile {
     color: $color-grey;

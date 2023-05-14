@@ -3,7 +3,7 @@ import Navigation from '../navigation/Navigation';
 import burger from '../../assets/svg/burger_menu.svg';
 import logo from '../../assets/svg/logo.svg';
 import { ReactSVG } from 'react-svg';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
 function Header() {
   const [navClass, setNavClass] = useState('nav');

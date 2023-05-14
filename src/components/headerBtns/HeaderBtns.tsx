@@ -15,6 +15,11 @@ function HeaderBtns() {
           Sign Up
         </NavLink>
       </button>
+      <button className="btns__sign-up">
+        <NavLink to="/" className="nav__link" id="log-out">
+          Log out
+        </NavLink>
+      </button>
     </div>
   );
 }
