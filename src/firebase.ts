@@ -1,5 +1,4 @@
 import { initializeApp } from 'firebase/app';
-import { getAnalytics } from 'firebase/analytics';
 import {
   getAuth,
   signInWithEmailAndPassword,
@@ -43,15 +42,9 @@ const logout = () => {
   localStorage.removeItem('sessionToken');
 };
 
-export const setToken = async(user: User) => {
+export const setToken = async (user: User) => {
   const userToken = await user.getIdToken();
   localStorage.setItem('sessionToken', userToken);
-}
-
-export {
-  auth,
-  db,
-  logInWithEmailAndPassword,
-  registerWithEmailAndPassword,
-  logout,
 };
+
+export { auth, db, logInWithEmailAndPassword, registerWithEmailAndPassword, logout };

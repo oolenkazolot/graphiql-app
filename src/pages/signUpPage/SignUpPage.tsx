@@ -22,20 +22,19 @@ const SignUpPage: React.FC = () => {
   const [authError, setAuthError] = useState('');
   const [authLoading, setAuthLoading] = useState(false);
 
-  useEffect( () => {
+  useEffect(() => {
     if (user) {
       navigate('/Main');
       setToken(user);
     }
-  }, [user]);
+  });
 
   const handleFormSubmit = async (data: SignUpValues) => {
-    console.log(data);
     const { email, password, confirmPassword } = data;
 
-    if(password !== confirmPassword) {
+    if (password !== confirmPassword) {
       return setAuthError(`Passwords don't match`);
-    } 
+    }
 
     try {
       setAuthError('');
@@ -70,7 +69,10 @@ const SignUpPage: React.FC = () => {
           <input
             type="password"
             id="user-pass"
-            {...register('password', { required: 'This field is mandatory for registration',  minLength: 6 })}
+            {...register('password', {
+              required: 'This field is mandatory for registration',
+              minLength: 6,
+            })}
             placeholder="Please enter your password"
           />
           {errors.password?.type === 'required' && (
@@ -85,7 +87,10 @@ const SignUpPage: React.FC = () => {
           <input
             type="password"
             id="user-confirm-pass"
-            {...register('confirmPassword', { required: 'This field is mandatory for registration',  minLength: 6})}
+            {...register('confirmPassword', {
+              required: 'This field is mandatory for registration',
+              minLength: 6,
+            })}
             placeholder="Please repeat your password"
           />
           {errors.confirmPassword?.type === 'required' && (
@@ -95,7 +100,9 @@ const SignUpPage: React.FC = () => {
             <span className="error-message">Your password should be at least 6 symbols</span>
           )}
         </div>
-        <button className="button-auth button-auth_sign-up" disabled={authLoading}>Submit</button>
+        <button className="button-auth button-auth_sign-up" disabled={authLoading}>
+          Submit
+        </button>
         <div className="sign-up-form__redirect">
           <span className="sign-up-form__text">Already have an account?</span>
           <Link to="/SignIn" className="sign-up-form__link">

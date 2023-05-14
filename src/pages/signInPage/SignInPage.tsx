@@ -26,10 +26,9 @@ const SignInPage: React.FC = () => {
       navigate('/Main');
       setToken(user);
     }
-  }, [user]);
+  });
 
   const handleFormSubmit = async (data: SignInValues) => {
-    console.log(data);
     const { email, password } = data;
 
     try {
@@ -72,7 +71,9 @@ const SignInPage: React.FC = () => {
             <span className="error-message">{errors.password.message}</span>
           )}
         </div>
-        <button className="button-auth button-auth_sign-in" disabled={loading}>Sign In</button>
+        <button className="button-auth button-auth_sign-in" disabled={loading}>
+          Sign In
+        </button>
         <div className="sign-in-form__redirect">
           <span className="sign-in-form__text">Do not have an account yet?</span>
           <Link to="/SignUp" className="sign-in-form__link">
