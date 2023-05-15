@@ -3,7 +3,7 @@
 
 .sign-in {
   width: 100%;
-  height: calc(100vh - 152px);
+  height: calc(100vh + 25px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,7 +11,7 @@
   margin-top: 66px;
   @include mobile {
     margin-top: 46px;
-    height: calc(100vh - 178.875px);
+    height: calc(100vh - 65px);
   }
 }
 

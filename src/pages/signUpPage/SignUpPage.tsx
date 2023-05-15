@@ -47,7 +47,7 @@ const SignUpPage: React.FC = () => {
       setAuthLoading(true);
       await registerWithEmailAndPassword(email, password);
     } catch {
-      setAuthError('Failed to create an account. This email is already in use.');
+      setAuthError('Failed to create an account.');
     }
 
     setAuthLoading(false);
