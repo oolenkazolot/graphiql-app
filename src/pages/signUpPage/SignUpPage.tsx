@@ -4,6 +4,8 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import { auth, registerWithEmailAndPassword, setToken } from '../../firebase';
 import { useEffect, useState } from 'react';
+import { useAppDispatch } from '../../app/hooks';
+import { setAuthorized } from '../../slices/authSlice';
 
 interface SignUpValues {
   email: string;
@@ -21,11 +23,15 @@ const SignUpPage: React.FC = () => {
   const navigate = useNavigate();
   const [authError, setAuthError] = useState('');
   const [authLoading, setAuthLoading] = useState(false);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     if (user) {
       navigate('/Main');
-      setToken(user);
+      // сохранить в редакс
+      dispatch(setAuthorized(true));
+      // coхранить в локал стор?
+      // setToken(user);
     }
   });
 
