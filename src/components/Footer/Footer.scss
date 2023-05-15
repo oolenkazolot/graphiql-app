@@ -1,0 +1,70 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+.footer {
+    background-color: $background-dark;
+    &__wrapper {
+        @include welcome-wrapper(1rem 2rem);
+
+        @include mobile {
+            padding: 1rem 0.5rem;
+        }
+    }
+
+    &__year {
+        @include font-settings($color-grey)
+    }
+    
+    &__RS {
+        width: 139.166667px;
+        height: 50px;
+        transition: $transition;
+        &:hover {
+            opacity: $hover;
+        }
+
+        @include mobile {
+            height: 30px;
+        }
+    }
+}
+
+.gitHub {
+    &__wrapper {
+        display: flex;
+        gap: 1rem;
+        justify-content: space-between;
+        align-items: center;
+
+        @include mobile {
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+    }
+
+    &__svg {
+        width: 50px;
+        height: 50px;
+        fill: white;
+        transition: $transition;
+        &:hover {
+            opacity: $hover;
+        }
+
+        @include mobile {
+            height: 30px;
+        }
+    }
+
+    &__link {
+        cursor: pointer;
+    }
+
+    &__name {
+        @include font-settings($color-grey);
+        transition: $transition;
+        &:hover {
+            color: white;
+        }
+    }
+}

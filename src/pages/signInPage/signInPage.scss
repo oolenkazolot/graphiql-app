@@ -1,15 +1,17 @@
 @import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
 
 .sign-in {
   width: 100%;
-  height: calc(100vh - 65px);
+  height: calc(100vh - 152px);
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: $bg-main-second;
-
-  @media all and (max-width: $mobile-width) {
-    min-height: calc(100vh - 45px);
+  margin-top: 66px;
+  @include mobile {
+    margin-top: 46px;
+    height: calc(100vh - 178.875px);
   }
 }
 
