@@ -5,7 +5,6 @@ import cross from '../../assets/svg/x_icon.svg';
 import { ReactSVG } from 'react-svg';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase';
-import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 export type IProps = {
@@ -14,13 +13,12 @@ export type IProps = {
 };
 
 function Navigation(props: IProps) {
-
   const [user, loading] = useAuthState(auth);
   const { navClass, hideNavigation } = props;
   const [graphiClass, setGraphiClass] = useState('invisible-nav');
 
   useEffect(() => {
-    if(!loading) {
+    if (!loading) {
       if (!user) {
         setGraphiClass('invisible-nav');
       } else {

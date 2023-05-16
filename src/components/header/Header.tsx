@@ -10,8 +10,6 @@ function Header() {
   const [overlayClass, setOverlayClass] = useState('overlay');
   const [isScroll, setIsScroll] = useState(false);
 
-
-
   useEffect(() => {
     const handleScroll = () => {
       const scrolledPxs = window.pageYOffset;

@@ -18,10 +18,10 @@ function MainPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if(!loading) {
+    if (!loading) {
       if (!user) {
         navigate('/');
-      } 
+      }
     }
   }, [loading, navigate, user]);
 
@@ -31,7 +31,6 @@ function MainPage() {
 
     setResponse(str);
   }, [query]);
-
 
   return (
     <>

@@ -6,14 +6,13 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase';
 
 function HeaderBtns() {
-
   const [logInBtnClass, setLogInBtnClass] = useState('invisible-btn');
   const [logOutBtnClass, setLogOutBtnClass] = useState('invisible-btn');
 
   const [user, loading] = useAuthState(auth);
 
   useEffect(() => {
-    if(!loading) {
+    if (!loading) {
       if (!user) {
         setLogInBtnClass('btns__sign-up');
         setLogOutBtnClass('invisible-btn');
