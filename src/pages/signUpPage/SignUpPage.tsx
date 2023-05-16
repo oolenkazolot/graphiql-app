@@ -2,7 +2,7 @@ import './signUpPage.scss';
 import { useForm } from 'react-hook-form';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
-import { auth, registerWithEmailAndPassword, setToken } from '../../firebase';
+import { auth, registerWithEmailAndPassword } from '../../firebase';
 import { useEffect, useState } from 'react';
 import { useAppDispatch } from '../../app/hooks';
 import { setAuthorized } from '../../slices/authSlice';
@@ -28,10 +28,7 @@ const SignUpPage: React.FC = () => {
   useEffect(() => {
     if (user) {
       navigate('/Main');
-      // сохранить в редакс
       dispatch(setAuthorized(true));
-      // coхранить в локал стор?
-      // setToken(user);
     }
   });
 

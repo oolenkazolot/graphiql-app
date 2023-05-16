@@ -1,7 +1,7 @@
 import './signInPage.scss';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
-import { auth, logInWithEmailAndPassword, setToken } from '../../firebase';
+import { auth, logInWithEmailAndPassword } from '../../firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useEffect, useState } from 'react';
 import { useAppDispatch } from '../../app/hooks';
@@ -28,8 +28,6 @@ const SignInPage: React.FC = () => {
     if (user) {
       navigate('/Main');
       dispatch(setAuthorized(true));
-      // coхранить в локал стор?
-      // setToken(user);
     }
   });
 

@@ -1,3 +1,4 @@
+import { logout } from '../../firebase';
 import './HeaderBtns.scss';
 
 import { NavLink } from 'react-router-dom';
@@ -15,7 +16,7 @@ function HeaderBtns() {
           Sign Up
         </NavLink>
       </button>
-      <button className="btns__sign-up">
+      <button className="btns__sign-up" onClick={logout}>
         <NavLink to="/" className="nav__link" id="log-out">
           Log out
         </NavLink>

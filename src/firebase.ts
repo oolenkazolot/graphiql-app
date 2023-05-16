@@ -39,12 +39,11 @@ const registerWithEmailAndPassword = async (email: string, password: string) => 
 
 const logout = () => {
   signOut(auth);
-  localStorage.removeItem('sessionToken');
 };
 
-export const setToken = async (user: User) => {
+export const getUserToken = async (user: User) => {
   const userToken = await user.getIdToken();
-  localStorage.setItem('sessionToken', userToken);
+  return userToken;
 };
 
 export { auth, db, logInWithEmailAndPassword, registerWithEmailAndPassword, logout };
