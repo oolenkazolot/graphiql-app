@@ -4,16 +4,11 @@ import burger from '../../assets/svg/burger_menu.svg';
 import logo from '../../assets/svg/logo.svg';
 import { ReactSVG } from 'react-svg';
 import { useState, useEffect } from 'react';
-import { useAppSelector } from '../../app/hooks';
-import { selectAuthorized } from '../../slices/authSlice';
 
 function Header() {
   const [navClass, setNavClass] = useState('nav');
   const [overlayClass, setOverlayClass] = useState('overlay');
   const [isScroll, setIsScroll] = useState(false);
-
-  // берет значение из редакса
-  const isAuthorized = useAppSelector(selectAuthorized);
 
   useEffect(() => {
     const handleScroll = () => {
