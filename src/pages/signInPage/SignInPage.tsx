@@ -1,6 +1,11 @@
-import { Link } from 'react-router-dom';
 import './signInPage.scss';
 import { useForm } from 'react-hook-form';
+import { Link, useNavigate } from 'react-router-dom';
+import { auth, logInWithEmailAndPassword } from '../../firebase';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useEffect, useState } from 'react';
+import { useAppDispatch } from '../../app/hooks';
+import { setAuthorized } from '../../slices/authSlice';
 
 interface SignInValues {
   email: string;
@@ -13,17 +18,40 @@ const SignInPage: React.FC = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<SignInValues>();
+  const [user] = useAuthState(auth);
+  const navigate = useNavigate();
+  const [signInError, setSignInError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const dispatch = useAppDispatch();
 
-  const handleFormSubmit = (data: SignInValues) => {
-    console.log(data);
+  useEffect(() => {
+    if (user) {
+      navigate('/Main');
+      dispatch(setAuthorized(true));
+    }
+  });
+
+  const handleFormSubmit = async (data: SignInValues) => {
+    const { email, password } = data;
+
+    try {
+      setSignInError('');
+      setLoading(true);
+      await logInWithEmailAndPassword(email, password);
+    } catch {
+      setSignInError('Failed to sign in with current credentials');
+    }
+
+    setLoading(false);
   };
 
   return (
     <div className="sign-in">
       <form className="sign-in-form" onSubmit={handleSubmit(handleFormSubmit)}>
         <h1 className="sign-in-form__title">Sign In</h1>
+        {signInError && <div className="response-error">{signInError}</div>}
         <div className="sign-in-form__email-info">
-          <label htmlFor="user-email">E-mail</label>
+          <label htmlFor="user-email">E-mail:</label>
           <input
             type="email"
             id="user-email"
@@ -35,7 +63,7 @@ const SignInPage: React.FC = () => {
           )}
         </div>
         <div className="sign-in-form__password-info">
-          <label htmlFor="user-pass">Password</label>
+          <label htmlFor="user-pass">Password:</label>
           <input
             type="password"
             id="user-pass"
@@ -46,7 +74,9 @@ const SignInPage: React.FC = () => {
             <span className="error-message">{errors.password.message}</span>
           )}
         </div>
-        <button className="button-auth button-auth_sign-in">Sign In</button>
+        <button className="button-auth button-auth_sign-in" disabled={loading}>
+          Sign In
+        </button>
         <div className="sign-in-form__redirect">
           <span className="sign-in-form__text">Do not have an account yet?</span>
           <Link to="/SignUp" className="sign-in-form__link">
