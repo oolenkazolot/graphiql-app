@@ -5,8 +5,12 @@
   @include mobile {
     margin-top: 46px;
   }
-  &__editor {
+
+  &__editor-bar {
     display: flex;
-    justify-content: space-between;
+  }
+
+  &__query-wrap {
+    width: 50%;
   }
 }
