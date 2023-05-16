@@ -1,0 +1,27 @@
+@import '../styles/variables.scss';
+
+%scroll-gray {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background: $color-light-gray;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: $color-pink;
+    margin: 0;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: $color-pink-bright;
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    background: $color-pink;
+  }
+}

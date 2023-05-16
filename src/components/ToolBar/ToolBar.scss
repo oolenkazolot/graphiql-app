@@ -3,7 +3,7 @@
 
 .tool-bar {
   color: $color-light-gray;
-  @include btn-style;
+  @include btn-style($bg-main, $bg-dark2);
 
   &__title {
     margin-right: 5px;

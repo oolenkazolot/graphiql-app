@@ -1,9 +1,9 @@
 @import './variables.scss';
 
-@mixin btn-style {
+@mixin btn-style($color1, $color2) {
   padding: 5px 10px;
-  background-color: #0f202d;
-  border: 1px solid rgb(9, 20, 28);
+  background-color: $color1;
+  border: 1px solid $color2;
   border-radius: 4px;
 }
 
@@ -58,7 +58,7 @@
 }
 
 @mixin font-settings($color) {
-        font-size: 15px;
-        font-weight: 300;
-        color: $color;
+  font-size: 15px;
+  font-weight: 300;
+  color: $color;
 }

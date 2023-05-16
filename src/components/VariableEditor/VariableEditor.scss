@@ -1,0 +1,31 @@
+@import '../../styles/variables.scss';
+@import '../../styles/scroll.scss';
+
+.variable-editor {
+  &__btn {
+    width: 100%;
+    padding: 14px 14px 15px 21px;
+    background: $bg-dark2;
+    color: $color-light-gray;
+    text-align: start;
+    text-transform: uppercase;
+    letter-spacing: 0.53px;
+    line-height: 14px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  &__wrap {
+    max-height: 0;
+    overflow: hidden;
+
+    &_open {
+      max-height: 400px;
+      overflow: auto;
+    }
+  }
+
+  .cm-scroller {
+    @extend %scroll-gray;
+  }
+}

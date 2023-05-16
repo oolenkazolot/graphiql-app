@@ -1,3 +1,16 @@
+@import '../../styles/scroll.scss';
+
 .response {
+  display: flex;
   flex: 1;
+  height: calc(100vh - 197px);
+  overflow: auto;
+
+  .cm-theme {
+    width: 100%;
+  }
+
+  .cm-scroller {
+    @extend %scroll-gray;
+  }
 }

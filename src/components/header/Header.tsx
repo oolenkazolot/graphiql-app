@@ -14,12 +14,12 @@ function Header() {
     const handleScroll = () => {
       const scrolledPxs = window.pageYOffset;
       setIsScroll(scrolledPxs > 0);
-    }
+    };
     window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   function showNavigation() {
     setNavClass('nav nav-visible');
@@ -30,7 +30,6 @@ function Header() {
     setNavClass('nav');
     setOverlayClass('overlay');
   }
-
 
   return (
     <header className={isScroll ? 'header scroll' : 'header'}>
