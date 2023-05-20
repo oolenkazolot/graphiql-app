@@ -2,6 +2,7 @@
 @import '../../styles/scroll.scss';
 
 .variable-editor {
+  font-family: 'Source Code Pro', monospace;
   &__btn {
     width: 100%;
     padding: 14px 14px 15px 21px;
@@ -26,6 +27,6 @@
   }
 
   .cm-scroller {
-    @extend %scroll-gray;
+    @extend %scroll;
   }
 }

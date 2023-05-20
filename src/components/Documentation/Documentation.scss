@@ -1,0 +1,29 @@
+@import '../../styles/variables.scss';
+@import '../../styles/scroll-pink.scss';
+
+.documentation {
+  display: none;
+  flex: 1;
+  height: calc(100vh - 197px);
+  margin: 20px 0 20px;
+  padding: 0 10px;
+  background-color: $color-white;
+  overflow: auto;
+  @extend %scroll-pink;
+
+  &_active {
+    display: block;
+  }
+
+  &__content {
+    margin-top: 20px;
+  }
+
+  &__title {
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    color: $color-grey2;
+    font-weight: bold;
+  }
+}
