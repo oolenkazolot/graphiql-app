@@ -50,11 +50,7 @@ function MainPage() {
       <section className={mainClass}>
         <div className={`${mainClass}__wrap`}>
           <div className={`${mainClass}__container`}>
-            <TopBar
-              onSubmitHandler={onSubmit}
-              onClickHandler={toggleDocumentation}
-              isShowBtnDoc={isShowBtnDoc}
-            />
+            <TopBar onSubmitHandler={onSubmit} />
             <div className={`${mainClass}__editor-bar`}>
               <div className={`${mainClass}__query-wrap`}>
                 <Editor isOpen={variablesIsOpen} onChangeHandler={setQuery} />
@@ -71,6 +67,8 @@ function MainPage() {
             <Documentation
               onActiveDocumentation={isOpenDocumentation}
               setIsShowBtnDoc={setIsShowBtnDoc}
+              onClickHandler={toggleDocumentation}
+              isShowBtnDoc={isShowBtnDoc}
             />
           </Suspense>
         </div>

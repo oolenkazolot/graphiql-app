@@ -2,17 +2,28 @@
 @import '../../styles/scroll-pink.scss';
 
 .documentation {
-  display: none;
-  flex: 1;
-  height: calc(100vh - 197px);
-  margin: 20px 0 20px;
-  padding: 0 10px;
+  position: fixed;
+  right: -300px;
+  width: 300px;
+  height: calc(100vh - 152px);
   background-color: $color-white;
-  overflow: auto;
-  @extend %scroll-pink;
+  transition: right 0.7s;
+
+  @media (max-width: 768px) {
+    height: calc(100vh - 46px);
+    right: -280px;
+    width: 280px;
+  }
 
   &_active {
-    display: block;
+    right: 0;
+  }
+
+  &__wrap {
+    height: 100%;
+    @extend %scroll-pink;
+    padding: 0 10px;
+    overflow: auto;
   }
 
   &__content {
@@ -25,5 +36,25 @@
     font-size: 18px;
     color: $color-grey2;
     font-weight: bold;
+  }
+
+  &__btn {
+    position: absolute;
+    top: 160px;
+    left: -30px;
+    transform: rotate(-90deg);
+    transform-origin: top left;
+    height: 30px;
+    width: 60px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 12px;
+    border-radius: 2px 2px 0 0;
+    background: $color-pink;
+    color: $color-white;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    padding: 0 10px;
   }
 }

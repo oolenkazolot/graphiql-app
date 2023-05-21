@@ -16,8 +16,6 @@ function Scheme({ scheme }: TScheme) {
     return scheme.types.find((item: TTypeItem) => item.name === scheme.queryType.name);
   }, [scheme]);
 
-  console.log('scheme:', scheme);
-
   if (!queryType) {
     return null;
   }
