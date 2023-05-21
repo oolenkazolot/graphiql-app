@@ -9,9 +9,16 @@ const mainClass = 'documentation';
 type TDocumentation = {
   onActiveDocumentation: boolean;
   setIsShowBtnDoc: (value: boolean) => void;
+  isShowBtnDoc: boolean;
+  onClickHandler: () => void;
 };
 
-function Documentation({ onActiveDocumentation, setIsShowBtnDoc }: TDocumentation) {
+function Documentation({
+  onActiveDocumentation,
+  setIsShowBtnDoc,
+  onClickHandler,
+  isShowBtnDoc,
+}: TDocumentation) {
   const [schema, setSchema] = useState<ITreeData | null>(null);
 
   const updateSchema = (value: ITreeData) => {
@@ -27,11 +34,18 @@ function Documentation({ onActiveDocumentation, setIsShowBtnDoc }: TDocumentatio
 
   return (
     <section className={className}>
-      <h2 className={`${mainClass}__title`}>Documentation Explorer</h2>
-      {schema && (
-        <div className={`${mainClass}__content`}>
-          <Scheme scheme={schema.data.__schema} />
-        </div>
+      <div className={`${mainClass}__wrap`}>
+        <h2 className={`${mainClass}__title`}>Documentation Explorer</h2>
+        {schema && (
+          <div className={`${mainClass}__content`}>
+            <Scheme scheme={schema.data.__schema} />
+          </div>
+        )}
+      </div>
+      {isShowBtnDoc && (
+        <button className={`${mainClass}__btn`} onClick={onClickHandler}>
+          DOCS
+        </button>
       )}
     </section>
   );

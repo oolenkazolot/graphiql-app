@@ -6,11 +6,9 @@ import github from '../../assets/svg/github.svg';
 
 type TTopBar = {
   onSubmitHandler: () => void;
-  isShowBtnDoc: boolean;
-  onClickHandler: () => void;
 };
 
-function TopBar({ onSubmitHandler, onClickHandler, isShowBtnDoc }: TTopBar) {
+function TopBar({ onSubmitHandler }: TTopBar) {
   return (
     <div className={mainClass}>
       <a
@@ -26,11 +24,11 @@ function TopBar({ onSubmitHandler, onClickHandler, isShowBtnDoc }: TTopBar) {
         <i className={`icon-play ${mainClass}__btn-play-icon`}></i>
       </button>
       <ToolBar />
-      {isShowBtnDoc && (
+      {/* {isShowBtnDoc && (
         <button className={`${mainClass}__btn-doc-explorer`} onClick={onClickHandler}>
           Docs
         </button>
-      )}
+      )} */}
     </div>
   );
 }
