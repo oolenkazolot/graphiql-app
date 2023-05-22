@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import TopBar from '../../components/TopBar/TopBar';
 import Response from '../../components/Response/Response';
 import VariableEditor from '../../components/VariableEditor/VariableEditor';
+import HeadersEditor from '../../components/HeadersEditor/HeadersEditor';
 import { makeRequest } from '../../Api/Api';
 import './MainPage.scss';
 const mainClass = 'main-page';
@@ -17,6 +18,8 @@ function MainPage() {
   const [query, setQuery] = useState('');
   const [variablesIsOpen, setVariablesIsOpen] = useState(false);
   const [variables, setVariables] = useState('');
+  const [headers, setHeaders] = useState('');
+  const [headersIsOpen, setHeadersIsOpen] = useState(false);
   const [isShowBtnDoc, setIsShowBtnDoc] = useState(false);
   const [isOpenDocumentation, setIsOpenDocumentation] = useState(false);
 
@@ -32,13 +35,17 @@ function MainPage() {
   }, [loading, navigate, user]);
 
   const onSubmit = useCallback(async () => {
-    const res = await makeRequest(query, variables);
+    const res = await makeRequest(query, variables, headers);
     const str: string = JSON.stringify(res);
     setResponse(str);
-  }, [query, variables]);
+  }, [query, variables, headers]);
 
   const toggleVariables = () => {
     setVariablesIsOpen(!variablesIsOpen);
+  };
+
+  const toggleHeaders = () => {
+    setHeadersIsOpen(!headersIsOpen);
   };
 
   const toggleDocumentation = () => {
@@ -60,7 +67,14 @@ function MainPage() {
                   onChangeHandler={setVariables}
                 />
               </div>
-              <Response response={response} />
+              <div className={`${mainClass}__response-wrap`}>
+                <Response isOpen={headersIsOpen} response={response} />
+                <HeadersEditor
+                  isOpen={headersIsOpen}
+                  onToggleHeaders={toggleHeaders}
+                  onChangeHandler={setHeaders}
+                />
+              </div>
             </div>
           </div>
           <Suspense>

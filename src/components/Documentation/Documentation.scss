@@ -1,7 +1,8 @@
 @import '../../styles/variables.scss';
 @import '../../styles/scroll-pink.scss';
+$name: 'documentation';
 
-.documentation {
+.#{$name} {
   position: fixed;
   right: -300px;
   width: 300px;
@@ -42,19 +43,27 @@
     position: absolute;
     top: 160px;
     left: -30px;
-    transform: rotate(-90deg);
-    transform-origin: top left;
     height: 30px;
     width: 60px;
+    padding: 0 10px;
+    transform: rotate(-90deg);
+    transform-origin: top left;
     font-size: 14px;
     font-weight: 600;
     line-height: 12px;
     border-radius: 2px 2px 0 0;
-    background: $color-pink;
+    background-color: #3d5866;
     color: $color-white;
     text-transform: uppercase;
     cursor: pointer;
+    transition: background-color 0.3s ease-out;
 
-    padding: 0 10px;
+    .#{$name}_active & {
+      background-color: $color-pink;
+    }
+
+    &:hover {
+      background-color: $color-pink-hover;
+    }
   }
 }

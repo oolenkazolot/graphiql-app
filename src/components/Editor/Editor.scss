@@ -1,12 +1,26 @@
 @import '../../styles/scroll.scss';
+@import '../../styles/variables.scss';
 .editor {
-  height: calc(100vh - 240px);
+  height: calc(100vh - ($height-header + $top-bar + $btn-variables + $height-footer));
   display: flex;
   flex: 1;
   overflow: auto;
 
+  @media (max-width: 768px) {
+    height: calc(100vh - ($height-header-mob + $top-bar + $btn-variables + $height-footer-mob));
+  }
+
   &_variables-open {
-    height: calc(100vh - 460px);
+    height: calc(
+      100vh - ($height-header + $top-bar + $btn-variables + $height-footer + $variables-height)
+    );
+
+    @media (max-width: 768px) {
+      height: calc(
+        100vh -
+          ($height-header-mob + $top-bar + $btn-variables + $height-footer-mob + $variables-height)
+      );
+    }
   }
 
   .cm-scroller {

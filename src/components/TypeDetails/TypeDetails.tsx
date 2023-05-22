@@ -11,7 +11,6 @@ type TTypeDetails = {
 
 function TypeDetails({ typeItem, types }: TTypeDetails) {
   const fields = typeItem.inputFields || typeItem.fields;
-  console.log(typeItem);
 
   return (
     <div className={mainClass}>
