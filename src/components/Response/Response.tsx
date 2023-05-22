@@ -1,26 +1,23 @@
-import CodeMirror from '@uiw/react-codemirror';
-import { javascript } from '@codemirror/lang-javascript';
 import { tabulateJSON } from '../../utils/tabulateJSON';
-import { myThemeResponse } from '../../utils/themeCodemirror';
+
 import './Response.scss';
 const mainClass = 'response';
 
-const extensions = [javascript({ jsx: true })];
-
 type TResponse = {
   response: string;
+  isOpen: boolean;
 };
 
-function Response({ response }: TResponse) {
+function Response({ response, isOpen }: TResponse) {
   return (
-    <section className={mainClass}>
-      <CodeMirror
-        height="100%"
-        theme={myThemeResponse}
-        extensions={extensions}
-        readOnly={true}
-        value={tabulateJSON(response)}
-      />
+    <section className={isOpen ? `${mainClass} ${mainClass}_headers-open` : mainClass}>
+      {response ? (
+        <pre className={`${mainClass}__code`}>{tabulateJSON(response)}</pre>
+      ) : (
+        <div className={`${mainClass}__default-text`}>
+          Hit the Play Button to get a response here
+        </div>
+      )}
     </section>
   );
 }
