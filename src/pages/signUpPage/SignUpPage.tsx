@@ -50,11 +50,11 @@ const SignUpPage: React.FC = () => {
     setAuthLoading(false);
   };
 
-  const validatePassword = (password: string) => {
-    const passRegex = new RegExp("^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$");
+  const validatePassword = (password: string): boolean => {
+    const passRegex = new RegExp('^(?=.*?[A-Za-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$');
     const valid = passRegex.test(password);
     return valid;
-  }
+  };
 
   return (
     <div className="sign-up">
@@ -92,7 +92,9 @@ const SignUpPage: React.FC = () => {
             <span className="error-message">Your password should be at least 8 symbols</span>
           )}
           {errors.password?.type === 'validate' && (
-          <span className="error-message">Your password should contain at least one letter, a number and a special character</span>
+            <span className="error-message">
+              Your password should contain at least one letter, a number and a special character
+            </span>
           )}
         </div>
         <div className="sign-up-form__confirm-password-info">
