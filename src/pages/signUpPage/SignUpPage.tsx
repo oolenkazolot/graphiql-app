@@ -6,6 +6,7 @@ import { auth, registerWithEmailAndPassword } from '../../firebase';
 import { useEffect, useState } from 'react';
 import { useAppDispatch } from '../../app/hooks';
 import { setAuthorized } from '../../slices/authSlice';
+import { useTranslation } from 'react-i18next';
 
 interface SignUpValues {
   email: string;
@@ -24,6 +25,7 @@ const SignUpPage: React.FC = () => {
   const [authError, setAuthError] = useState('');
   const [authLoading, setAuthLoading] = useState(false);
   const dispatch = useAppDispatch();
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (user) {
@@ -36,7 +38,7 @@ const SignUpPage: React.FC = () => {
     const { email, password, confirmPassword } = data;
 
     if (password !== confirmPassword) {
-      return setAuthError(`Passwords don't match`);
+      return setAuthError(`${t("signUp.mismatch")}`);
     }
 
     try {
@@ -44,7 +46,7 @@ const SignUpPage: React.FC = () => {
       setAuthLoading(true);
       await registerWithEmailAndPassword(email, password);
     } catch {
-      setAuthError('Failed to create an account.');
+      setAuthError(`${t("signUp.error")}`);
     }
 
     setAuthLoading(false);
@@ -53,63 +55,63 @@ const SignUpPage: React.FC = () => {
   return (
     <div className="sign-up">
       <form className="sign-up-form" onSubmit={handleSubmit(handleFormSubmit)}>
-        <h1 className="sign-up-form__title">Sign Up</h1>
+        <h1 className="sign-up-form__title">{t("signUp.signUp")}</h1>
         {authError && <div className="response-error">{authError}</div>}
         <div className="sign-up-form__email-info">
-          <label htmlFor="user-email">E-mail:</label>
+          <label htmlFor="user-email">{t("signUp.e-mail")}</label>
           <input
             type="email"
             id="user-email"
-            {...register('email', { required: 'This field is mandatory for registration' })}
-            placeholder="Please enter your e-mail"
+            {...register('email', { required: `${t("signUp.required")}` })}
+            placeholder={t("signUp.e-mail-pl") || ""}
           />
           {errors.email?.type === 'required' && (
             <span className="error-message">{errors.email.message}</span>
           )}
         </div>
         <div className="sign-up-form__password-info">
-          <label htmlFor="user-pass">Password:</label>
+          <label htmlFor="user-pass">{t("signUp.password")}</label>
           <input
             type="password"
             id="user-pass"
             {...register('password', {
-              required: 'This field is mandatory for registration',
+              required: `${t("signUp.required")}`,
               minLength: 6,
             })}
-            placeholder="Please enter your password"
+            placeholder={t("signUp.password-pl") || ""}
           />
           {errors.password?.type === 'required' && (
             <span className="error-message">{errors.password.message}</span>
           )}
           {errors.password?.type === 'minLength' && (
-            <span className="error-message">Your password should be at least 6 symbols</span>
+            <span className="error-message">{t("signUp.error-pswd")}</span>
           )}
         </div>
         <div className="sign-up-form__confirm-password-info">
-          <label htmlFor="user-confirm-pass">Confirm password:</label>
+          <label htmlFor="user-confirm-pass">{t("signUp.confirm")}</label>
           <input
             type="password"
             id="user-confirm-pass"
             {...register('confirmPassword', {
-              required: 'This field is mandatory for registration',
+              required: `${t("signUp.required")}`,
               minLength: 6,
             })}
-            placeholder="Please repeat your password"
+            placeholder={t("signUp.confirm-pl") || ""}
           />
           {errors.confirmPassword?.type === 'required' && (
             <span className="error-message">{errors.confirmPassword.message}</span>
           )}
           {errors.confirmPassword?.type === 'minLength' && (
-            <span className="error-message">Your password should be at least 6 symbols</span>
+            <span className="error-message">{t("signUp.error-pswd")}</span>
           )}
         </div>
         <button className="button-auth button-auth_sign-up" disabled={authLoading}>
-          Submit
+        {t("signUp.submit")}
         </button>
         <div className="sign-up-form__redirect">
-          <span className="sign-up-form__text">Already have an account?</span>
+          <span className="sign-up-form__text">{t("signUp.text")}</span>
           <Link to="/SignIn" className="sign-up-form__link">
-            Sign In
+          {t("signIn.signIn")}
           </Link>
         </div>
       </form>

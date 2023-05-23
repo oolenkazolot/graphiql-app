@@ -50,5 +50,20 @@
         "required": "This field is mandatory for signing in",
         "e-mail-pl": "Please enter your e-mail",
         "password-pl": "Please enter your password"
+    },
+    "signUp": {
+        "signUp": "Sign Up",
+        "error": "Failed to create an account.",
+        "e-mail": "E-mail:",
+        "required": "This field is mandatory for registration",
+        "e-mail-pl": "Please enter your e-mail",
+        "password": "Password:",
+        "password-pl": "Please enter your password",
+        "error-pswd": "Your password should be at least 6 symbols",
+        "confirm": "Confirm password:",
+        "confirm-pl": "Please repeat your password",
+        "submit": "Submit",
+        "text": "Already have an account?",
+        "mismatch": "Passwords don't match"
     }
 }
