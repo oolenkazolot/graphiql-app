@@ -2,7 +2,7 @@
 $color-light-gray: rgba(255, 255, 255, 0.6);
 $color-grey2: #b2b2b2;
 $color-grey: #aaa;
-$color-pink: rgba(245, 40, 145, 0.8);
+$color-pink: rgba(245, 41, 146, 0.8);
 $color-title: #ccd0d3;
 $color-input: #2f404e;
 $color-input-text: #757575;
@@ -36,6 +36,17 @@ $mobile-gap: 1rem;
 $transition-code-examples: 2.5s;
 $transition-buttons: 0.3s ease-out;
 $transform-duration: translate(0px, 70px);
+
+// height
+$variables-height: 220px;
+$headers-height: 220px;
+$height-footer: 86px;
+$height-footer-mob: 133px;
+$height-header: 66px;
+$height-header-mob: 46px;
+$top-bar: 53px;
+$btn-variables: 43px;
+$btn-headers: 43px;
 
 //screen-sizes
 $mobile-width: 638px;

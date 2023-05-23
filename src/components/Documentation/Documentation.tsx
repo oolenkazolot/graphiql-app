@@ -21,14 +21,13 @@ function Documentation({
 }: TDocumentation) {
   const [schema, setSchema] = useState<ITreeData | null>(null);
 
-  const updateSchema = (value: ITreeData) => {
-    setIsShowBtnDoc(true);
-    setSchema(value);
-  };
-
   useEffect(() => {
+    const updateSchema = (value: ITreeData) => {
+      setIsShowBtnDoc(true);
+      setSchema(value);
+    };
     getGraphQLSchema(updateSchema);
-  });
+  }, [setIsShowBtnDoc]);
 
   const className = onActiveDocumentation ? `${mainClass} ${mainClass}_active` : mainClass;
 
