@@ -1,16 +1,38 @@
 @import '../../styles/scroll.scss';
+@import '../../styles/variables.scss';
 
 .response {
   display: flex;
   flex: 1;
-  height: calc(100vh - 197px);
+  height: calc(100vh - ($height-header + $top-bar + $btn-headers + $height-footer));
+  background-color: $bg-main-second;
+  color: $color-pink;
   overflow: auto;
+  @extend %scroll;
 
-  .cm-theme {
-    width: 100%;
+  @media (max-width: 768px) {
+    height: calc(100vh - ($height-header-mob + $top-bar + $btn-headers + $height-footer-mob));
   }
 
-  .cm-scroller {
-    @extend %scroll;
+  &_headers-open {
+    height: calc(
+      100vh - ($height-header + $top-bar + $btn-headers + $height-footer + $headers-height)
+    );
+
+    @media (max-width: 768px) {
+      height: calc(
+        100vh -
+          ($height-header-mob + $top-bar + $btn-headers + $height-footer-mob + $headers-height)
+      );
+    }
+  }
+
+  &__default-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    color: $color-grey2;
   }
 }
