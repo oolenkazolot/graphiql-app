@@ -50,6 +50,12 @@ const SignUpPage: React.FC = () => {
     setAuthLoading(false);
   };
 
+  const validatePassword = (password: string) => {
+    const passRegex = new RegExp("^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$");
+    const valid = passRegex.test(password);
+    return valid;
+  }
+
   return (
     <div className="sign-up">
       <form className="sign-up-form" onSubmit={handleSubmit(handleFormSubmit)}>
@@ -74,7 +80,8 @@ const SignUpPage: React.FC = () => {
             id="user-pass"
             {...register('password', {
               required: 'This field is mandatory for registration',
-              minLength: 6,
+              minLength: 8,
+              validate: (value) => validatePassword(value),
             })}
             placeholder="Please enter your password"
           />
@@ -82,7 +89,10 @@ const SignUpPage: React.FC = () => {
             <span className="error-message">{errors.password.message}</span>
           )}
           {errors.password?.type === 'minLength' && (
-            <span className="error-message">Your password should be at least 6 symbols</span>
+            <span className="error-message">Your password should be at least 8 symbols</span>
+          )}
+          {errors.password?.type === 'validate' && (
+          <span className="error-message">Your password should contain at least one letter, a number and a special character</span>
           )}
         </div>
         <div className="sign-up-form__confirm-password-info">
@@ -92,7 +102,7 @@ const SignUpPage: React.FC = () => {
             id="user-confirm-pass"
             {...register('confirmPassword', {
               required: 'This field is mandatory for registration',
-              minLength: 6,
+              minLength: 8,
             })}
             placeholder="Please repeat your password"
           />
@@ -100,7 +110,7 @@ const SignUpPage: React.FC = () => {
             <span className="error-message">{errors.confirmPassword.message}</span>
           )}
           {errors.confirmPassword?.type === 'minLength' && (
-            <span className="error-message">Your password should be at least 6 symbols</span>
+            <span className="error-message">Your password should be at least 8 symbols</span>
           )}
         </div>
         <button className="button-auth button-auth_sign-up" disabled={authLoading}>
