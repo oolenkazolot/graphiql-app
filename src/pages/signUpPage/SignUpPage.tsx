@@ -81,7 +81,7 @@ const SignUpPage: React.FC = () => {
             type="password"
             id="user-pass"
             {...register('password', {
-              required: 'This field is mandatory for registration',
+              required: `${t("signUp.required")}`,
               minLength: 8,
               validate: (value) => validatePassword(value),
             })}
@@ -91,11 +91,11 @@ const SignUpPage: React.FC = () => {
             <span className="error-message">{errors.password.message}</span>
           )}
           {errors.password?.type === 'minLength' && (
-            <span className="error-message">Your password should be at least 8 symbols</span>
+            <span className="error-message">{t("signUp.error-pswd")}</span>
           )}
           {errors.password?.type === 'validate' && (
             <span className="error-message">
-              Your password should contain at least one letter, a number and a special character
+             {t("signUp.error-pswd2")}
             </span>
           )}
         </div>
@@ -105,7 +105,7 @@ const SignUpPage: React.FC = () => {
             type="password"
             id="user-confirm-pass"
             {...register('confirmPassword', {
-              required: 'This field is mandatory for registration',
+              required: `${t("signUp.required")}`,
               minLength: 8,
             })}
             placeholder={t("signUp.confirm-pl") || ""}
@@ -114,7 +114,7 @@ const SignUpPage: React.FC = () => {
             <span className="error-message">{errors.confirmPassword.message}</span>
           )}
           {errors.confirmPassword?.type === 'minLength' && (
-            <span className="error-message">Your password should be at least 8 symbols</span>
+            <span className="error-message">{t("signUp.error-pswd")}</span>
           )}
         </div>
         <button className="button-auth button-auth_sign-up" disabled={authLoading}>
