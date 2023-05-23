@@ -6,6 +6,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useEffect, useState } from 'react';
 import { useAppDispatch } from '../../app/hooks';
 import { setAuthorized } from '../../slices/authSlice';
+import { useTranslation } from 'react-i18next';
 
 interface SignInValues {
   email: string;
@@ -23,6 +24,7 @@ const SignInPage: React.FC = () => {
   const [signInError, setSignInError] = useState('');
   const [loading, setLoading] = useState(false);
   const dispatch = useAppDispatch();
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (user) {
@@ -39,7 +41,7 @@ const SignInPage: React.FC = () => {
       setLoading(true);
       await logInWithEmailAndPassword(email, password);
     } catch {
-      setSignInError('Failed to sign in with current credentials');
+      setSignInError(`${t("signIn.error")}`);
     }
 
     setLoading(false);
@@ -48,39 +50,39 @@ const SignInPage: React.FC = () => {
   return (
     <div className="sign-in">
       <form className="sign-in-form" onSubmit={handleSubmit(handleFormSubmit)}>
-        <h1 className="sign-in-form__title">Sign In</h1>
+        <h1 className="sign-in-form__title">{t("signIn.signIn")}</h1>
         {signInError && <div className="response-error">{signInError}</div>}
         <div className="sign-in-form__email-info">
-          <label htmlFor="user-email">E-mail:</label>
+          <label htmlFor="user-email">{t("signIn.e-mail")}</label>
           <input
             type="email"
             id="user-email"
-            {...register('email', { required: 'This field is mandatory for signing in' })}
-            placeholder="Please enter your e-mail"
+            {...register('email', { required: `${t("signIn.required")}` })}
+            placeholder={t("signIn.e-mail-pl") || ""}
           />
           {errors.email?.type === 'required' && (
             <span className="error-message">{errors.email.message}</span>
           )}
         </div>
         <div className="sign-in-form__password-info">
-          <label htmlFor="user-pass">Password:</label>
+          <label htmlFor="user-pass">{t("signIn.password")}</label>
           <input
             type="password"
             id="user-pass"
-            {...register('password', { required: 'This field is mandatory for signing in' })}
-            placeholder="Please enter your password"
+            {...register('password', { required: `${t("signIn.required")}` })}
+            placeholder={t("signIn.password-pl") || ""}
           />
           {errors.password?.type === 'required' && (
             <span className="error-message">{errors.password.message}</span>
           )}
         </div>
         <button className="button-auth button-auth_sign-in" disabled={loading}>
-          Sign In
+        {t("signIn.signIn")}
         </button>
         <div className="sign-in-form__redirect">
-          <span className="sign-in-form__text">Do not have an account yet?</span>
+          <span className="sign-in-form__text">{t("signIn.text")}</span>
           <Link to="/SignUp" className="sign-in-form__link">
-            Sign Up
+          {t("signIn.signUp")}
           </Link>
         </div>
       </form>

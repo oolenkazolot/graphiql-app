@@ -2,21 +2,20 @@ import './FourthSection.scss';
 import { ReactSVG } from 'react-svg';
 import server from '../../../assets/svg/server.svg';
 import phone from '../../../assets/svg/phone.svg';
+import { useTranslation } from 'react-i18next';
 
 function FourthSection() {
+  const { t } = useTranslation();
   return (
     <section className="fourth-section">
       <div className="fourth-section__wrapper">
         <div className="fourth-section__block1">
           <h2 className="fourth-section__h2">
-            Get many resources <br />
-            in a single request
+            {t("section4.title1")} <br />
+            {t("section4.title2")}
           </h2>
           <p className="fourth-section__p">
-            GraphQL queries access not just the properties of one resource but also smoothly follow
-            references between them. While typical REST APIs require loading from multiple URLs,
-            GraphQL APIs get all the data your app needs in a single request. Apps using GraphQL can
-            be quick even on slow mobile network connections.
+          {t("section4.text")}
           </p>
         </div>
         <div className="fourth-section__block2">
