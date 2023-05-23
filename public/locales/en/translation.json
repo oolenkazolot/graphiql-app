@@ -1,0 +1,15 @@
+{
+    "header": {
+        "welcome": "Welcome Page",
+        "main": "Main Page",
+        "signIn": "Sign In",
+        "signUp": "Sign Up",
+        "logOut": "Log Out"
+    },
+    "section1": {
+        "describe": "Describe your data",
+        "ask": "Ask for what you want",
+        "get": "Get predictable results",
+        "start": "Get Started"
+    }
+}

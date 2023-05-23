@@ -5,6 +5,11 @@ import logo from '../../assets/svg/logo.svg';
 import { ReactSVG } from 'react-svg';
 import { useState, useEffect } from 'react';
 
+const locales = {
+  en: { title: 'english' },
+  ru: { title: 'russian' }
+};
+
 function Header() {
   const [navClass, setNavClass] = useState('nav');
   const [overlayClass, setOverlayClass] = useState('overlay');

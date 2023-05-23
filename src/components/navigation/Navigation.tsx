@@ -6,6 +6,7 @@ import { ReactSVG } from 'react-svg';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase';
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export type IProps = {
   navClass: string;
@@ -16,6 +17,7 @@ function Navigation(props: IProps) {
   const [user, loading] = useAuthState(auth);
   const { navClass, hideNavigation } = props;
   const [graphiClass, setGraphiClass] = useState('invisible-nav');
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     if (!loading) {
@@ -27,23 +29,29 @@ function Navigation(props: IProps) {
     }
   }, [user, loading]);
 
+  const changeLang = (lang: string) => {
+    i18n.changeLanguage(lang)
+  }
+
   return (
-    <nav className={navClass}>
-      <ul className="nav__ul">
-        <li className="nav__li">
-          <NavLink to="/" className="nav__link">
-            Welcome Page
-          </NavLink>
-        </li>
-        <li className={graphiClass}>
-          <NavLink to="/Main" className="nav__link">
-            GraphiQL
-          </NavLink>
-        </li>
-      </ul>
-      <HeaderBtns />
-      <ReactSVG src={cross} className="cross" onClick={hideNavigation} />
-    </nav>
+      <nav className={navClass}>
+        <ul className="nav__ul">
+          <li className="nav__li">
+            <NavLink to="/" className="nav__link">
+              {t("header.welcome")}
+            </NavLink>
+          </li>
+          <li className={graphiClass}>
+            <NavLink to="/Main" className="nav__link">
+              {t("header.main")}
+            </NavLink>
+          </li>
+        </ul>
+        <HeaderBtns />
+        <ReactSVG src={cross} className="cross" onClick={hideNavigation} />
+        <button onClick={() => changeLang("en")}>EN</button>
+        <button onClick={() => changeLang("ru")}>RU</button>
+      </nav>
   );
 }
 export default Navigation;
