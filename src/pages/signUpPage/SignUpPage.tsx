@@ -52,6 +52,12 @@ const SignUpPage: React.FC = () => {
     setAuthLoading(false);
   };
 
+  const validatePassword = (password: string): boolean => {
+    const passRegex = new RegExp('^(?=.*?[A-Za-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$');
+    const valid = passRegex.test(password);
+    return valid;
+  };
+
   return (
     <div className="sign-up">
       <form className="sign-up-form" onSubmit={handleSubmit(handleFormSubmit)}>
@@ -75,8 +81,9 @@ const SignUpPage: React.FC = () => {
             type="password"
             id="user-pass"
             {...register('password', {
-              required: `${t("signUp.required")}`,
-              minLength: 6,
+              required: 'This field is mandatory for registration',
+              minLength: 8,
+              validate: (value) => validatePassword(value),
             })}
             placeholder={t("signUp.password-pl") || ""}
           />
@@ -84,7 +91,12 @@ const SignUpPage: React.FC = () => {
             <span className="error-message">{errors.password.message}</span>
           )}
           {errors.password?.type === 'minLength' && (
-            <span className="error-message">{t("signUp.error-pswd")}</span>
+            <span className="error-message">Your password should be at least 8 symbols</span>
+          )}
+          {errors.password?.type === 'validate' && (
+            <span className="error-message">
+              Your password should contain at least one letter, a number and a special character
+            </span>
           )}
         </div>
         <div className="sign-up-form__confirm-password-info">
@@ -93,8 +105,8 @@ const SignUpPage: React.FC = () => {
             type="password"
             id="user-confirm-pass"
             {...register('confirmPassword', {
-              required: `${t("signUp.required")}`,
-              minLength: 6,
+              required: 'This field is mandatory for registration',
+              minLength: 8,
             })}
             placeholder={t("signUp.confirm-pl") || ""}
           />
@@ -102,7 +114,7 @@ const SignUpPage: React.FC = () => {
             <span className="error-message">{errors.confirmPassword.message}</span>
           )}
           {errors.confirmPassword?.type === 'minLength' && (
-            <span className="error-message">{t("signUp.error-pswd")}</span>
+            <span className="error-message">Your password should be at least 8 symbols</span>
           )}
         </div>
         <button className="button-auth button-auth_sign-up" disabled={authLoading}>
