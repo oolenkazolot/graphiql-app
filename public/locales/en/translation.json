@@ -66,5 +66,9 @@
         "submit": "Submit",
         "text": "Already have an account?",
         "mismatch": "Passwords don't match"
+    },
+    "main": {
+        "query": "Query Variables",
+        "headers": "HTTP Headers"
     }
 }

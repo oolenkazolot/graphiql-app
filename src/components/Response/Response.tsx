@@ -1,6 +1,8 @@
 import { tabulateJSON } from '../../utils/tabulateJSON';
 
 import './Response.scss';
+import { useTranslation } from 'react-i18next';
+
 const mainClass = 'response';
 
 type TResponse = {
@@ -9,13 +11,14 @@ type TResponse = {
 };
 
 function Response({ response, isOpen }: TResponse) {
+  const { t } = useTranslation();
   return (
     <section className={isOpen ? `${mainClass} ${mainClass}_headers-open` : mainClass}>
       {response ? (
         <pre className={`${mainClass}__code`}>{tabulateJSON(response)}</pre>
       ) : (
         <div className={`${mainClass}__default-text`}>
-          Hit the Play Button to get a response here
+          {t("main.hit")}
         </div>
       )}
     </section>

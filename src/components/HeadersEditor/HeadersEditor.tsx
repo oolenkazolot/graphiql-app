@@ -5,6 +5,7 @@ import { createNewTheme } from '../../utils/createNewTheme';
 import './HeadersEditor.scss';
 import '../../styles/variables.scss';
 const mainClass = 'headers-editor';
+import { useTranslation } from 'react-i18next';
 
 type TRequest = {
   onChangeHandler: (value: string) => void;
@@ -26,12 +27,13 @@ function HeadersEditor({ onChangeHandler, onToggleHeaders, isOpen }: TRequest) {
     },
     [onChangeHandler]
   );
+  const { t } = useTranslation();
 
   return (
     <section className={mainClass}>
       {
         <button className={`${mainClass}__btn`} onClick={onToggleHeaders}>
-          HTTP Headers
+          {t("main.headers")}
         </button>
       }
       <div className={isOpen ? `${mainClass}__wrap ${mainClass}__wrap_open` : `${mainClass}__wrap`}>

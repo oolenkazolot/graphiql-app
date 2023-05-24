@@ -4,6 +4,7 @@ import { javascript } from '@codemirror/lang-javascript';
 import './VariableEditor.scss';
 import { createNewTheme } from '../../utils/createNewTheme';
 const mainClass = 'variable-editor';
+import { useTranslation } from 'react-i18next';
 
 type TRequest = {
   onChangeHandler: (value: string) => void;
@@ -23,10 +24,12 @@ function VariableEditor({ onChangeHandler, onToggleVariables, isOpen }: TRequest
     [onChangeHandler]
   );
 
+  const { t } = useTranslation();
+
   return (
     <section className={mainClass}>
       <button className={`${mainClass}__btn`} onClick={onToggleVariables}>
-        Query Variables
+        {t("main.query")}
       </button>
       <div className={isOpen ? `${mainClass}__wrap ${mainClass}__wrap_open` : `${mainClass}__wrap`}>
         <CodeMirror height="220px" theme={theme} extensions={extensions} onChange={onChange} />
