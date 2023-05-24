@@ -69,6 +69,12 @@
     },
     "main": {
         "query": "Query Variables",
-        "headers": "HTTP Headers"
+        "headers": "HTTP Headers",
+        "hit": "Hit the Play Button to get a response here"
+    },
+    "documentation": {
+        "explorer": "Documentation Explorer",
+        "type": "TYPE DETAILS",
+        "arg": "ARGUMENTS"
     }
 }
