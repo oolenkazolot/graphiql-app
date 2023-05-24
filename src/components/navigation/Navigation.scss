@@ -6,8 +6,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
-  width: 85%;
+  width: 92%;
   transition: 0.5s ease-out;
   @include mobile {
     background-color: $background-dark;
@@ -74,4 +73,26 @@
 
 .invisible-nav {
   visibility: hidden;
+}
+
+.lang {
+  margin-left: auto;
+  margin-right: 1rem;
+  border: none;
+  background: transparent;
+  color:white;
+  font-family: "Rubik", sans-serif;
+  outline: none;
+  width: 3rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+.option {
+  color: black;
+  text-align: center;
 }

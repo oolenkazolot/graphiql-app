@@ -1,6 +1,9 @@
 import './TaskInfo.scss';
+import { useTranslation } from 'react-i18next';
 
 function TaskInfo() {
+  const { t } = useTranslation();
+
   return (
     <section className="task-info">
       <div className="task-info__wrapper">
@@ -9,7 +12,7 @@ function TaskInfo() {
             href="https://github.com/rolling-scopes-school/tasks/blob/master/react/modules/graphiql.md"
             className="task-info__link"
           >
-            GraphiQL Clone
+            {t("section2.clone")}
           </a>
         </h1>
         <div className="task-info__block">

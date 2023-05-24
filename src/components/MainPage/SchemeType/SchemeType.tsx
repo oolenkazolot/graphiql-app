@@ -6,6 +6,7 @@ import Argument from '../Argument/Argument';
 import { getParamsFields } from '../../../utils/getParamsFields';
 import './SchemeType.scss';
 const mainClass = 'scheme-type';
+import { useTranslation } from 'react-i18next';
 
 type TSchemeTypeProps = {
   typeItem: TField;
@@ -14,6 +15,7 @@ type TSchemeTypeProps = {
 };
 
 function SchemeType({ typeItem, types, mod }: TSchemeTypeProps) {
+  const { t } = useTranslation();
   const { queryType, isList, isRequired } = useMemo(() => {
     return getParamsFields(typeItem, types);
   }, [typeItem, types]);
@@ -45,7 +47,7 @@ function SchemeType({ typeItem, types, mod }: TSchemeTypeProps) {
           )}
           {typeItem.args && typeItem.args.length ? (
             <>
-              <div className={`${mainClass}__arguments chapter`}>ARGUMENTS</div>
+              <div className={`${mainClass}__arguments chapter`}>{t("documentation.arg")}</div>
               {typeItem.args.map((item: TArgs, index: number) => (
                 <div key={index}>
                   <Argument typeItem={item} types={types} />

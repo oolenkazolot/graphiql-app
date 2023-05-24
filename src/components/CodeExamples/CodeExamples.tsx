@@ -1,15 +1,18 @@
 import './CodeExamples.scss';
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 function CodeExamples() {
   const [codeExampleClass, setCodeExampleClass] = useState('code-example__block code-invisible');
+  const { t } = useTranslation();
+
   useEffect(() => {
     setCodeExampleClass('code-example__block');
   }, []);
   return (
     <div className="code-example">
       <div className={codeExampleClass} id="firstBlock">
-        <h3 className="code-example__title">Describe your data</h3>
+        <h3 className="code-example__title">{t("section1.describe")}</h3>
         <pre className="code-example__code">
           <span className="red">type:</span>{' '}
           <span>
@@ -28,7 +31,7 @@ function CodeExamples() {
         </pre>
       </div>
       <div className={codeExampleClass} id="secondBlock">
-        <h3 className="code-example__title">Ask for what you want</h3>
+        <h3 className="code-example__title">{t("section1.ask")}</h3>
         <pre className="code-example__code">
           <span className="grey">{'{'}</span>
           {'\n  '}
@@ -46,7 +49,7 @@ function CodeExamples() {
         </pre>
       </div>
       <div className={codeExampleClass} id="thirdBlock">
-        <h3 className="code-example__title">Get predictable results</h3>
+        <h3 className="code-example__title">{t("section1.get")}</h3>
         <pre className="code-example__code">
           <span className="grey">{'{'}</span>
           {'\n  '}

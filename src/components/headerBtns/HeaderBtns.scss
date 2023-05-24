@@ -18,6 +18,7 @@
     padding: 0.5rem 0.8rem;
     border: none;
     transition: $transition-buttons;
+    min-width: 115px;
     @include mobile {
       background: transparent;
       padding: 0;
