@@ -4,6 +4,7 @@ import burger from '../../assets/svg/burger_menu.svg';
 import logo from '../../assets/svg/logo.svg';
 import { ReactSVG } from 'react-svg';
 import { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 
 const locales = {
   en: { title: 'english' },
@@ -39,7 +40,9 @@ function Header() {
   return (
     <header className={isScroll ? 'header scroll' : 'header'}>
       <div className="header__wrapper">
-        <ReactSVG src={logo} className="logo" />
+        <NavLink to="/signIn">
+          <ReactSVG src={logo} className="logo" />
+        </NavLink>
         <Navigation navClass={navClass} hideNavigation={hideNavigation} />
         <ReactSVG src={burger} className="burger" onClick={showNavigation} />
       </div>

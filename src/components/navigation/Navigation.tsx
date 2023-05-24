@@ -18,6 +18,7 @@ function Navigation(props: IProps) {
   const { navClass, hideNavigation } = props;
   const [graphiClass, setGraphiClass] = useState('invisible-nav');
   const { t, i18n } = useTranslation();
+  const currLng = i18n.language;
 
   useEffect(() => {
     if (!loading) {
@@ -47,10 +48,12 @@ function Navigation(props: IProps) {
             </NavLink>
           </li>
         </ul>
+        <select className="lang" value={currLng} onChange={(e) => changeLang(e.target.value)}>
+          <option className="option" value="en">EN</option>
+          <option className="option" value="ru">RU</option>
+        </select>
         <HeaderBtns />
         <ReactSVG src={cross} className="cross" onClick={hideNavigation} />
-        <button onClick={() => changeLang("en")}>EN</button>
-        <button onClick={() => changeLang("ru")}>RU</button>
       </nav>
   );
 }
