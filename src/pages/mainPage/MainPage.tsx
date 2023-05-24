@@ -1,19 +1,21 @@
 import React, { useState, useCallback, useEffect, Suspense } from 'react';
-import Editor from '../../components/Editor/Editor';
+import Editor from '../../components/MainPage/Editor/Editor';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase';
 import { useNavigate } from 'react-router-dom';
-import TopBar from '../../components/TopBar/TopBar';
-import Response from '../../components/Response/Response';
-import VariableEditor from '../../components/VariableEditor/VariableEditor';
-import HeadersEditor from '../../components/HeadersEditor/HeadersEditor';
+import TopBar from '../../components/MainPage/TopBar/TopBar';
+import Response from '../../components/MainPage/Response/Response';
+import VariableEditor from '../../components/MainPage/VariableEditor/VariableEditor';
+import HeadersEditor from '../../components/MainPage/HeadersEditor/HeadersEditor';
 import { makeRequest } from '../../Api/Api';
 import { Modal } from '../../components/Modal/Modal';
 import { Message } from '../../components/Message/Message';
 import './MainPage.scss';
 const mainClass = 'main-page';
 
-const Documentation = React.lazy(() => import('../../components/Documentation/Documentation'));
+const Documentation = React.lazy(
+  () => import('../../components/MainPage/Documentation/Documentation')
+);
 
 function MainPage(): JSX.Element {
   const [response, setResponse] = useState<string>('');
