@@ -3,7 +3,6 @@ import CodeMirror from '@uiw/react-codemirror';
 import { javascript } from '@codemirror/lang-javascript';
 import { createNewTheme } from '../../utils/createNewTheme';
 import './HeadersEditor.scss';
-import '../../styles/variables.scss';
 const mainClass = 'headers-editor';
 
 type TRequest = {
