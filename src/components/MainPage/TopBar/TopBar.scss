@@ -1,0 +1,66 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 30px 10px;
+  background-color: $bg-main-second;
+  border-bottom: 1px solid $color-grey2;
+
+  @media (max-width: 768px) {
+    padding: 10px 20px 10px;
+  }
+
+  &__link {
+    width: 32px;
+    line-height: 0;
+    cursor: pointer;
+    transition: opacity $transition;
+
+    &:hover {
+      opacity: $hover;
+    }
+  }
+
+  &__link-img {
+    width: 100%;
+  }
+
+  &__btn-play {
+    line-height: 0;
+    transition: opacity $transition;
+
+    &:hover {
+      opacity: $hover;
+    }
+  }
+
+  &__btn-play-icon {
+    color: #ffffff99;
+    font-size: 30px;
+  }
+
+  &__btn-doc-explorer {
+    color: $color-light-gray;
+    transition: opacity $transition;
+
+    &:hover {
+      opacity: $hover;
+    }
+
+    &::before {
+      display: inline-block;
+      position: relative;
+      height: 9px;
+      width: 9px;
+      margin: 0 3px -1px 0;
+      border-left: 2px solid $color-light-gray;
+      border-top: 2px solid $color-light-gray;
+      content: '';
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+  }
+}

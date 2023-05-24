@@ -1,8 +1,0 @@
-@import '../../styles/variables.scss';
-$name: 'argument';
-
-.#{$name} {
-  &__description {
-    color: $color-grey2;
-  }
-}

@@ -1,0 +1,24 @@
+@import '../../../styles/variables.scss';
+$name: 'scheme-type';
+
+.#{$name} {
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  &__description {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: $color-grey2;
+  }
+}
+
+.chapter {
+  padding: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  color: $color-grey2;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
