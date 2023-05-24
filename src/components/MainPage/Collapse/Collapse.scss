@@ -1,0 +1,32 @@
+@import '../../../styles/variables.scss';
+$name: 'collapse';
+
+.#{$name} {
+  padding-left: 10px;
+
+  &__title {
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: opacity $transition;
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    .#{$name}_args & {
+      color: $color-blue;
+    }
+
+    .#{$name}_type & {
+      color: $color-blue;
+    }
+
+    color: $color-pink-bright;
+    font-weight: bold;
+  }
+
+  &__mark {
+    color: $color-yellow-light;
+    font-weight: bold;
+  }
+}

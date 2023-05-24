@@ -1,0 +1,20 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.tool-bar {
+  color: $color-light-gray;
+  @include btn-style($bg-main, $bg-dark2);
+
+  &__title {
+    margin-right: 5px;
+
+    @media (max-width: 576px) {
+      display: none;
+    }
+  }
+
+  &__content {
+    max-width: 250px;
+    color: $color-light-gray;
+  }
+}

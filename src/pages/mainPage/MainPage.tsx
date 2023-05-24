@@ -1,30 +1,35 @@
 import React, { useState, useCallback, useEffect, Suspense } from 'react';
-import Editor from '../../components/Editor/Editor';
+import Editor from '../../components/MainPage/Editor/Editor';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase';
 import { useNavigate } from 'react-router-dom';
-import TopBar from '../../components/TopBar/TopBar';
-import Response from '../../components/Response/Response';
-import VariableEditor from '../../components/VariableEditor/VariableEditor';
-import HeadersEditor from '../../components/HeadersEditor/HeadersEditor';
+import TopBar from '../../components/MainPage/TopBar/TopBar';
+import Response from '../../components/MainPage/Response/Response';
+import VariableEditor from '../../components/MainPage/VariableEditor/VariableEditor';
+import HeadersEditor from '../../components/MainPage/HeadersEditor/HeadersEditor';
 import { makeRequest } from '../../Api/Api';
+import { Modal } from '../../components/Modal/Modal';
+import { Message } from '../../components/Message/Message';
 import './MainPage.scss';
 const mainClass = 'main-page';
 
-const Documentation = React.lazy(() => import('../../components/Documentation/Documentation'));
+const Documentation = React.lazy(
+  () => import('../../components/MainPage/Documentation/Documentation')
+);
 
-function MainPage() {
-  const [response, setResponse] = useState('');
-  const [query, setQuery] = useState('');
-  const [variablesIsOpen, setVariablesIsOpen] = useState(false);
-  const [variables, setVariables] = useState('');
-  const [headers, setHeaders] = useState('');
-  const [headersIsOpen, setHeadersIsOpen] = useState(false);
-  const [isShowBtnDoc, setIsShowBtnDoc] = useState(false);
-  const [isOpenDocumentation, setIsOpenDocumentation] = useState(false);
-
+function MainPage(): JSX.Element {
+  const [response, setResponse] = useState<string>('');
+  const [query, setQuery] = useState<string>('');
+  const [variablesIsOpen, setVariablesIsOpen] = useState<boolean>(false);
+  const [variables, setVariables] = useState<string>('');
+  const [headers, setHeaders] = useState<string>('');
+  const [headersIsOpen, setHeadersIsOpen] = useState<boolean>(false);
+  const [isShowBtnDoc, setIsShowBtnDoc] = useState<boolean>(false);
+  const [isOpenDocumentation, setIsOpenDocumentation] = useState<boolean>(false);
+  const [error, setError] = useState<string | boolean>('');
   const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
+  const [isOpenModal, setIsOpenModal] = useState<boolean>();
 
   useEffect(() => {
     if (!loading) {
@@ -36,8 +41,16 @@ function MainPage() {
 
   const onSubmit = useCallback(async () => {
     const res = await makeRequest(query, variables, headers);
-    const str: string = JSON.stringify(res);
-    setResponse(str);
+
+    if (res instanceof Error) {
+      setError(res.message);
+      setResponse('');
+      setIsOpenModal(true);
+    } else {
+      const responseStr: string = JSON.stringify(res);
+      setResponse(responseStr);
+      setError(false);
+    }
   }, [query, variables, headers]);
 
   const toggleVariables = () => {
@@ -85,6 +98,17 @@ function MainPage() {
               isShowBtnDoc={isShowBtnDoc}
             />
           </Suspense>
+          {isOpenModal && (
+            <Modal
+              classNameIcon="icon-close"
+              onCloseModal={() => {
+                setIsOpenModal(!isOpenModal);
+              }}
+              isOpen={isOpenModal}
+            >
+              <Message title="Error" content={error} />
+            </Modal>
+          )}
         </div>
       </section>
     </>
