@@ -76,5 +76,6 @@
         "explorer": "Documentation Explorer",
         "type": "TYPE DETAILS",
         "arg": "ARGUMENTS"
-    }
+    },
+    "404": "Page is not found"
 }

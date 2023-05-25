@@ -8,6 +8,7 @@ import { auth } from '../../firebase';
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
+
 export type IProps = {
   navClass: string;
   hideNavigation: () => void;
