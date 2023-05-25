@@ -39,12 +39,12 @@ function Navigation(props: IProps) {
       <nav className={navClass}>
         <ul className="nav__ul">
           <li className="nav__li">
-            <NavLink to="/" className="nav__link">
+            <NavLink to="/" className="nav__link" onClick={hideNavigation}>
               {t("header.welcome")}
             </NavLink>
           </li>
           <li className={graphiClass}>
-            <NavLink to="/Main" className="nav__link">
+            <NavLink to="/Main" className="nav__link" onClick={hideNavigation}>
               {t("header.main")}
             </NavLink>
           </li>
@@ -53,7 +53,7 @@ function Navigation(props: IProps) {
           <option className="option" value="en">EN</option>
           <option className="option" value="ru">RU</option>
         </select>
-        <HeaderBtns />
+        <HeaderBtns hideNavigation={hideNavigation}/>
         <ReactSVG src={cross} className="cross" onClick={hideNavigation} />
       </nav>
   );

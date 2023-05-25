@@ -6,11 +6,6 @@ import { ReactSVG } from 'react-svg';
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
-const locales = {
-  en: { title: 'english' },
-  ru: { title: 'russian' }
-};
-
 function Header() {
   const [navClass, setNavClass] = useState('nav');
   const [overlayClass, setOverlayClass] = useState('overlay');

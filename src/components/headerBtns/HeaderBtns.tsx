@@ -6,7 +6,12 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase';
 import { useTranslation } from 'react-i18next';
 
-function HeaderBtns() {
+type IProps = {
+  hideNavigation: () => void;
+};
+
+function HeaderBtns(props: IProps) {
+  const { hideNavigation } = props;
   const [logInBtnClass, setLogInBtnClass] = useState('invisible-btn');
   const [logOutBtnClass, setLogOutBtnClass] = useState('invisible-btn');
 
@@ -29,17 +34,17 @@ function HeaderBtns() {
   return (
     <div className="btns">
       <button className={logInBtnClass}>
-        <NavLink to="/SignIn" className="nav__link" id="sign-in">
+        <NavLink to="/SignIn" className="nav__link" id="sign-in" onClick={hideNavigation}>
           {t("header.signIn")}
         </NavLink>
       </button>
       <button className={logInBtnClass}>
-        <NavLink to="/SignUp" className="nav__link" id="sign-up">
+        <NavLink to="/SignUp" className="nav__link" id="sign-up" onClick={hideNavigation}>
           {t("header.signUp")}
         </NavLink>
       </button>
       <button className={logOutBtnClass} onClick={logout}>
-        <NavLink to="/" className="nav__link" id="log-out">
+        <NavLink to="/" className="nav__link" id="log-out" onClick={hideNavigation}>
         {t("header.logOut")}
         </NavLink>
       </button>
