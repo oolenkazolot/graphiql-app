@@ -19,6 +19,7 @@
     left: 1000px;
     width: 100vw;
     z-index: 100;
+    gap: 1rem;
   }
   &__ul {
     display: flex;
@@ -30,7 +31,6 @@
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      margin-bottom: 1rem;
     }
   }
   &__li {
@@ -89,6 +89,10 @@
   appearance: none;
   &::-ms-expand {
     display: none;
+  }
+  @include mobile {
+   margin: 0;
+   width: auto;
   }
 }
 

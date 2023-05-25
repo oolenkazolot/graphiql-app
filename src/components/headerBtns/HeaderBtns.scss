@@ -22,6 +22,7 @@
     @include mobile {
       background: transparent;
       padding: 0;
+      min-width: auto;
     }
     &:hover {
       background: $color-pink-hover;
