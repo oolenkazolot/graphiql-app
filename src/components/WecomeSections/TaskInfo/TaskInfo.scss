@@ -16,6 +16,10 @@
     }
   }
 
+  &__cont {
+    width: 50%;
+  }
+
   &__h1 {
     padding: 1rem;
     font-size: 32px;
@@ -70,6 +74,16 @@
     transition: $transition;
     &:hover {
       color: $color-pink-bright;
+    }
+  }
+
+  &__p {
+    font-family: "Rubik", sans-serif;
+    line-height: 23px;
+    letter-spacing: 1.2px;
+    @include mobile {
+      font-size: 14px;
+      line-height: normal;
     }
   }
 }
