@@ -35,7 +35,7 @@ function Header() {
   return (
     <header className={isScroll ? 'header scroll' : 'header'}>
       <div className="header__wrapper">
-        <NavLink to="/signIn">
+        <NavLink to="/">
           <ReactSVG src={logo} className="logo" />
         </NavLink>
         <Navigation navClass={navClass} hideNavigation={hideNavigation} />
