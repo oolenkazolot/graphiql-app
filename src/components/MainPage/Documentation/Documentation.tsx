@@ -36,7 +36,7 @@ function Documentation({
   return (
     <section className={className}>
       <div className={`${mainClass}__wrap`}>
-        <h2 className={`${mainClass}__title`}>{t("documentation.explorer")}</h2>
+        <h2 className={`${mainClass}__title`}>{t('documentation.explorer')}</h2>
         {schema && (
           <div className={`${mainClass}__content`}>
             <Scheme scheme={schema.data.__schema} />

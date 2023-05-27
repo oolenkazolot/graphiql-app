@@ -12,7 +12,7 @@ function CodeExamples() {
   return (
     <div className="code-example">
       <div className={codeExampleClass} id="firstBlock">
-        <h3 className="code-example__title">{t("section1.describe")}</h3>
+        <h3 className="code-example__title">{t('section1.describe')}</h3>
         <pre className="code-example__code">
           <span className="red">type:</span>{' '}
           <span>
@@ -31,7 +31,7 @@ function CodeExamples() {
         </pre>
       </div>
       <div className={codeExampleClass} id="secondBlock">
-        <h3 className="code-example__title">{t("section1.ask")}</h3>
+        <h3 className="code-example__title">{t('section1.ask')}</h3>
         <pre className="code-example__code">
           <span className="grey">{'{'}</span>
           {'\n  '}
@@ -49,7 +49,7 @@ function CodeExamples() {
         </pre>
       </div>
       <div className={codeExampleClass} id="thirdBlock">
-        <h3 className="code-example__title">{t("section1.get")}</h3>
+        <h3 className="code-example__title">{t('section1.get')}</h3>
         <pre className="code-example__code">
           <span className="grey">{'{'}</span>
           {'\n  '}

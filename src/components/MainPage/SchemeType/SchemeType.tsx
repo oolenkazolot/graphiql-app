@@ -47,7 +47,7 @@ function SchemeType({ typeItem, types, mod }: TSchemeTypeProps) {
           )}
           {typeItem.args && typeItem.args.length ? (
             <>
-              <div className={`${mainClass}__arguments chapter`}>{t("documentation.arg")}</div>
+              <div className={`${mainClass}__arguments chapter`}>{t('documentation.arg')}</div>
               {typeItem.args.map((item: TArgs, index: number) => (
                 <div key={index}>
                   <Argument typeItem={item} types={types} />

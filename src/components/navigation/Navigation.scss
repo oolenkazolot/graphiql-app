@@ -80,8 +80,8 @@
   margin-right: 1rem;
   border: none;
   background: transparent;
-  color:white;
-  font-family: "Rubik", sans-serif;
+  color: white;
+  font-family: 'Rubik', sans-serif;
   outline: none;
   width: 3rem;
   -webkit-appearance: none;
@@ -91,8 +91,8 @@
     display: none;
   }
   @include mobile {
-   margin: 0;
-   width: auto;
+    margin: 0;
+    width: auto;
   }
 }
 

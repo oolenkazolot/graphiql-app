@@ -32,7 +32,7 @@ function HeadersEditor({ onChangeHandler, onToggleHeaders, isOpen }: TRequest) {
     <section className={mainClass}>
       {
         <button className={`${mainClass}__btn`} onClick={onToggleHeaders}>
-          {t("main.headers")}
+          {t('main.headers')}
         </button>
       }
       <div className={isOpen ? `${mainClass}__wrap ${mainClass}__wrap_open` : `${mainClass}__wrap`}>

@@ -17,9 +17,7 @@ function Response({ response, isOpen }: TResponse) {
       {response ? (
         <pre className={`${mainClass}__code`}>{tabulateJSON(response)}</pre>
       ) : (
-        <div className={`${mainClass}__default-text`}>
-          {t("main.hit")}
-        </div>
+        <div className={`${mainClass}__default-text`}>{t('main.hit')}</div>
       )}
     </section>
   );

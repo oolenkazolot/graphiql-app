@@ -7,7 +7,7 @@ const ErrorPage: React.FC = () => {
     <div className="error-page">
       <div className="error-page__info">
         <h1 className="error-page__title">404</h1>
-        <p className="error-page__text">{t("404")}</p>
+        <p className="error-page__text">{t('404')}</p>
       </div>
     </div>
   );

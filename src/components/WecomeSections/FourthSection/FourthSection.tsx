@@ -11,12 +11,10 @@ function FourthSection() {
       <div className="fourth-section__wrapper">
         <div className="fourth-section__block1">
           <h2 className="fourth-section__h2">
-            {t("section4.title1")} <br />
-            {t("section4.title2")}
+            {t('section4.title1')} <br />
+            {t('section4.title2')}
           </h2>
-          <p className="fourth-section__p">
-          {t("section4.text")}
-          </p>
+          <p className="fourth-section__p">{t('section4.text')}</p>
         </div>
         <div className="fourth-section__block2">
           <ReactSVG src={server} className="fourth-section__server" />
