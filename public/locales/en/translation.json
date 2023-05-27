@@ -13,7 +13,8 @@
         "start": "Get Started"
     },
     "section2": {
-        "clone": "GraphiQL Clone"
+        "clone": "GraphiQL Clone",
+        "description": "GraphiQL clone is a playground/IDE for graphQL requests. GraphiQL clone also include authorization/authentication capabilities"
     }, 
     "section3": {
         "title1": "A query language for your API",
