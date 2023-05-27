@@ -16,7 +16,7 @@ function TypeDetails({ typeItem, types }: TTypeDetails) {
 
   return (
     <div className={mainClass}>
-      <div className={`${mainClass}__title chapter`}>{t("documentation.type")}</div>
+      <div className={`${mainClass}__title chapter`}>{t('documentation.type')}</div>
       <div className={`${mainClass}__content`}>
         <div className={`${mainClass}__subtitle`}>
           <span className={`${mainClass}__text`}>type </span>

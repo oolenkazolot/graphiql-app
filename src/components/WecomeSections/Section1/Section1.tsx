@@ -21,7 +21,7 @@ function Section1() {
       </div>
       <button className={getStartedClass}>
         <NavLink to="/SignUp" className="nav__link" id="sign-up">
-        {t("section1.start")}
+          {t('section1.start')}
         </NavLink>
       </button>
     </section>

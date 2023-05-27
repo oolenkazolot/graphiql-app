@@ -1,82 +1,82 @@
 {
-    "header": {
-        "welcome": "Welcome Page",
-        "main": "Main Page",
-        "signIn": "Sign In",
-        "signUp": "Sign Up",
-        "logOut": "Log Out"
-    },
-    "section1": {
-        "describe": "Describe your data",
-        "ask": "Ask for what you want",
-        "get": "Get predictable results",
-        "start": "Get Started"
-    },
-    "section2": {
-        "clone": "GraphiQL Clone",
-        "description": "GraphiQL clone is a playground/IDE for graphQL requests. GraphiQL clone also include authorization/authentication capabilities"
-    }, 
-    "section3": {
-        "title1": "A query language for your API",
-        "text1": "GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools.",
-        "title2": "Ask for what you need,get exactly that",
-        "text2": "Send a GraphQL query to your API and get exactly what you need, nothing more and nothing less. GraphQL queries always return predictable results. Apps using GraphQL are fast and stable because they control the data they get, not the server."
-    },
-    "section4": {
-        "title1": "Get many resources",
-        "title2": "in a single request",
-        "text": " GraphQL queries access not just the properties of one resource but also smoothly follow references between them. While typical REST APIs require loading from multiple URLs, GraphQL APIs get all the data your app needs in a single request. Apps using GraphQL can be quick even on slow mobile network connections."
-    },
-    "section5": {
-        "title1": "Describe what’s possible with a type system",
-        "text1": "GraphQL APIs are organized in terms of types and fields, not endpoints. Access the full capabilities of your data from a single endpoint. GraphQL uses types to ensure Apps only ask for what’s possible and provide clear and helpful errors. Apps can use types to avoid writing manual parsing code.",
-        "title2": "Move faster with powerful developer tools",
-        "text2": "Know exactly what data you can request from your API without leaving your editor, highlight potential issues before sending a query, and take advantage of improved code intelligence. GraphQL makes it easy to build powerful tools like GraphiQL by leveraging your API’s type system."
-    },
-    "developers": {
-        "team": "Dream team",
-        "oolenka": "Volha Zalatarova",
-        "svetik": "Sviatlana Kliautsova",
-        "alisa": "Volha Haiduk",
-        "lead": "Team Lead",
-        "dev": "Front-end developer"
-    },
-    "signIn": {
-        "signIn": "Sign In",
-        "e-mail": "E-mail:",
-        "password": "Password:",
-        "text": "Do not have an account yet?",
-        "signUp": "Sign Up",
-        "error": "Failed to sign in with current credentials",
-        "required": "This field is mandatory for signing in",
-        "e-mail-pl": "Please enter your e-mail",
-        "password-pl": "Please enter your password"
-    },
-    "signUp": {
-        "signUp": "Sign Up",
-        "error": "Failed to create an account.",
-        "e-mail": "E-mail:",
-        "required": "This field is mandatory for registration",
-        "e-mail-pl": "Please enter your e-mail",
-        "password": "Password:",
-        "password-pl": "Please enter your password",
-        "error-pswd": "Your password should be at least 8 symbols",
-        "error-pswd2": " Your password should contain at least one letter, a number and a special character",
-        "confirm": "Confirm password:",
-        "confirm-pl": "Please repeat your password",
-        "submit": "Submit",
-        "text": "Already have an account?",
-        "mismatch": "Passwords don't match"
-    },
-    "main": {
-        "query": "Query Variables",
-        "headers": "HTTP Headers",
-        "hit": "Hit the Play Button to get a response here"
-    },
-    "documentation": {
-        "explorer": "Documentation Explorer",
-        "type": "TYPE DETAILS",
-        "arg": "ARGUMENTS"
-    },
-    "404": "Page is not found"
+  "header": {
+    "welcome": "Welcome Page",
+    "main": "Main Page",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "logOut": "Log Out"
+  },
+  "section1": {
+    "describe": "Describe your data",
+    "ask": "Ask for what you want",
+    "get": "Get predictable results",
+    "start": "Get Started"
+  },
+  "section2": {
+    "clone": "GraphiQL Clone",
+    "description": "GraphiQL clone is a playground/IDE for graphQL requests. GraphiQL clone also include authorization/authentication capabilities"
+  },
+  "section3": {
+    "title1": "A query language for your API",
+    "text1": "GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools.",
+    "title2": "Ask for what you need,get exactly that",
+    "text2": "Send a GraphQL query to your API and get exactly what you need, nothing more and nothing less. GraphQL queries always return predictable results. Apps using GraphQL are fast and stable because they control the data they get, not the server."
+  },
+  "section4": {
+    "title1": "Get many resources",
+    "title2": "in a single request",
+    "text": " GraphQL queries access not just the properties of one resource but also smoothly follow references between them. While typical REST APIs require loading from multiple URLs, GraphQL APIs get all the data your app needs in a single request. Apps using GraphQL can be quick even on slow mobile network connections."
+  },
+  "section5": {
+    "title1": "Describe what’s possible with a type system",
+    "text1": "GraphQL APIs are organized in terms of types and fields, not endpoints. Access the full capabilities of your data from a single endpoint. GraphQL uses types to ensure Apps only ask for what’s possible and provide clear and helpful errors. Apps can use types to avoid writing manual parsing code.",
+    "title2": "Move faster with powerful developer tools",
+    "text2": "Know exactly what data you can request from your API without leaving your editor, highlight potential issues before sending a query, and take advantage of improved code intelligence. GraphQL makes it easy to build powerful tools like GraphiQL by leveraging your API’s type system."
+  },
+  "developers": {
+    "team": "Dream team",
+    "oolenka": "Volha Zalatarova",
+    "svetik": "Sviatlana Kliautsova",
+    "alisa": "Volha Haiduk",
+    "lead": "Team Lead",
+    "dev": "Front-end developer"
+  },
+  "signIn": {
+    "signIn": "Sign In",
+    "e-mail": "E-mail:",
+    "password": "Password:",
+    "text": "Do not have an account yet?",
+    "signUp": "Sign Up",
+    "error": "Failed to sign in with current credentials",
+    "required": "This field is mandatory for signing in",
+    "e-mail-pl": "Please enter your e-mail",
+    "password-pl": "Please enter your password"
+  },
+  "signUp": {
+    "signUp": "Sign Up",
+    "error": "Failed to create an account.",
+    "e-mail": "E-mail:",
+    "required": "This field is mandatory for registration",
+    "e-mail-pl": "Please enter your e-mail",
+    "password": "Password:",
+    "password-pl": "Please enter your password",
+    "error-pswd": "Your password should be at least 8 symbols",
+    "error-pswd2": " Your password should contain at least one letter, a number and a special character",
+    "confirm": "Confirm password:",
+    "confirm-pl": "Please repeat your password",
+    "submit": "Submit",
+    "text": "Already have an account?",
+    "mismatch": "Passwords don't match"
+  },
+  "main": {
+    "query": "Query Variables",
+    "headers": "HTTP Headers",
+    "hit": "Hit the Play Button to get a response here"
+  },
+  "documentation": {
+    "explorer": "Documentation Explorer",
+    "type": "TYPE DETAILS",
+    "arg": "ARGUMENTS"
+  },
+  "404": "Page is not found"
 }

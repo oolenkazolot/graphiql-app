@@ -35,17 +35,17 @@ function HeaderBtns(props: IProps) {
     <div className="btns">
       <button className={logInBtnClass}>
         <NavLink to="/SignIn" className="nav__link" id="sign-in" onClick={hideNavigation}>
-          {t("header.signIn")}
+          {t('header.signIn')}
         </NavLink>
       </button>
       <button className={logInBtnClass}>
         <NavLink to="/SignUp" className="nav__link" id="sign-up" onClick={hideNavigation}>
-          {t("header.signUp")}
+          {t('header.signUp')}
         </NavLink>
       </button>
       <button className={logOutBtnClass} onClick={logout}>
         <NavLink to="/" className="nav__link" id="log-out" onClick={hideNavigation}>
-        {t("header.logOut")}
+          {t('header.logOut')}
         </NavLink>
       </button>
     </div>

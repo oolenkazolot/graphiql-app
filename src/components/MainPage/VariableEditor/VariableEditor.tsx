@@ -29,7 +29,7 @@ function VariableEditor({ onChangeHandler, onToggleVariables, isOpen }: TRequest
   return (
     <section className={mainClass}>
       <button className={`${mainClass}__btn`} onClick={onToggleVariables}>
-        {t("main.query")}
+        {t('main.query')}
       </button>
       <div className={isOpen ? `${mainClass}__wrap ${mainClass}__wrap_open` : `${mainClass}__wrap`}>
         <CodeMirror height="220px" theme={theme} extensions={extensions} onChange={onChange} />

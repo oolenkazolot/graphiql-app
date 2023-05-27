@@ -41,7 +41,7 @@ const SignInPage: React.FC = () => {
       setLoading(true);
       await logInWithEmailAndPassword(email, password);
     } catch {
-      setSignInError(`${t("signIn.error")}`);
+      setSignInError(`${t('signIn.error')}`);
     }
 
     setLoading(false);
@@ -50,39 +50,39 @@ const SignInPage: React.FC = () => {
   return (
     <div className="sign-in">
       <form className="sign-in-form" onSubmit={handleSubmit(handleFormSubmit)}>
-        <h1 className="sign-in-form__title">{t("signIn.signIn")}</h1>
+        <h1 className="sign-in-form__title">{t('signIn.signIn')}</h1>
         {signInError && <div className="response-error">{signInError}</div>}
         <div className="sign-in-form__email-info">
-          <label htmlFor="user-email">{t("signIn.e-mail")}</label>
+          <label htmlFor="user-email">{t('signIn.e-mail')}</label>
           <input
             type="email"
             id="user-email"
-            {...register('email', { required: `${t("signIn.required")}` })}
-            placeholder={t("signIn.e-mail-pl") || ""}
+            {...register('email', { required: `${t('signIn.required')}` })}
+            placeholder={t('signIn.e-mail-pl') || ''}
           />
           {errors.email?.type === 'required' && (
             <span className="error-message">{errors.email.message}</span>
           )}
         </div>
         <div className="sign-in-form__password-info">
-          <label htmlFor="user-pass">{t("signIn.password")}</label>
+          <label htmlFor="user-pass">{t('signIn.password')}</label>
           <input
             type="password"
             id="user-pass"
-            {...register('password', { required: `${t("signIn.required")}` })}
-            placeholder={t("signIn.password-pl") || ""}
+            {...register('password', { required: `${t('signIn.required')}` })}
+            placeholder={t('signIn.password-pl') || ''}
           />
           {errors.password?.type === 'required' && (
             <span className="error-message">{errors.password.message}</span>
           )}
         </div>
         <button className="button-auth button-auth_sign-in" disabled={loading}>
-        {t("signIn.signIn")}
+          {t('signIn.signIn')}
         </button>
         <div className="sign-in-form__redirect">
-          <span className="sign-in-form__text">{t("signIn.text")}</span>
+          <span className="sign-in-form__text">{t('signIn.text')}</span>
           <Link to="/SignUp" className="sign-in-form__link">
-          {t("signIn.signUp")}
+            {t('signIn.signUp')}
           </Link>
         </div>
       </form>
