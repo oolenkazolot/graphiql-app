@@ -1,34 +1,34 @@
-export const tabulateJSON = (jsonValue: string): string => {
-  let result = '';
-  let indentLevel = 0;
-  const indentSize = 2;
-  let inString = false;
+export const tabulateJSON = (value: string): string => {
+  let res = '';
+  let level = 0;
+  const sizeIndent = 2;
+  let inStr = false;
 
-  for (let i = 0; i < jsonValue.length; i++) {
-    const char = jsonValue[i];
+  for (let i = 0; i < value.length; i++) {
+    const char = value[i];
 
-    if (char === '"' && jsonValue[i - 1] !== '\\') {
-      inString = !inString;
+    if (char === '"' && value[i - 1] !== '\\') {
+      inStr = !inStr;
     }
 
-    if (!inString) {
+    if (!inStr) {
       if (char === '{' || char === '[') {
-        result += char + '\n' + ' '.repeat((indentLevel + 1) * indentSize);
-        indentLevel++;
+        res += char + '\n' + ' '.repeat((level + 1) * sizeIndent);
+        level++;
       } else if (char === '}' || char === ']') {
-        indentLevel--;
-        result += '\n' + ' '.repeat(indentLevel * indentSize) + char;
+        level--;
+        res += '\n' + ' '.repeat(level * sizeIndent) + char;
       } else if (char === ',') {
-        result += char + '\n' + ' '.repeat(indentLevel * indentSize);
+        res += char + '\n' + ' '.repeat(level * sizeIndent);
       } else if (char === ':') {
-        result += char + ' ';
+        res += char + ' ';
       } else {
-        result += char;
+        res += char;
       }
     } else {
-      result += char;
+      res += char;
     }
   }
 
-  return result;
+  return res;
 };
