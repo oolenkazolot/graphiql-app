@@ -15,10 +15,19 @@
   &__sign-up {
     background: $color-pink;
     border-radius: 15px;
-    padding: 0.5rem 0.8rem;
     border: none;
     transition: $transition-buttons;
     min-width: 115px;
+    height: 35px;
+
+    & .nav__link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: inherit;
+      height: inherit;
+    }
+
     @include mobile {
       background: transparent;
       padding: 0;
