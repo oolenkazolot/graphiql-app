@@ -3,8 +3,6 @@ import Collapse from '../Collapse/Collapse';
 import SchemeType from '../SchemeType/SchemeType';
 import { TTypeItem, TField, TDataScheme } from '../../../types/schemeTypes';
 
-import './Scheme.scss';
-
 const mainClass = 'scheme';
 
 type TScheme = {
