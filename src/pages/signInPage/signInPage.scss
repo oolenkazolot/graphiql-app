@@ -1,0 +1,74 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.sign-in {
+  width: 100%;
+  height: calc(100vh + 25px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $bg-main-second;
+  margin-top: 66px;
+  @include mobile {
+    margin-top: 46px;
+    height: calc(100vh - 65px);
+  }
+}
+
+.sign-in-form {
+  width: 60%;
+  height: fit-content;
+  padding: 20px 30px;
+  border: 2px solid $color-pink;
+  border-radius: 15px;
+
+  @media all and (max-width: 1000px) {
+    width: 80%;
+  }
+
+  @media all and (max-width: $mobile-width) {
+    padding: 15px;
+  }
+
+  &__title {
+    color: $color-title;
+    margin-bottom: 30px;
+    text-align: center;
+
+    @media all and (max-width: $mobile-width) {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__redirect {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__text {
+    font-size: 18px;
+    color: $color-title;
+    padding-right: 10px;
+
+    @media all and (max-width: $mobile-width) {
+      font-size: 12px;
+      padding-right: 5px;
+    }
+  }
+
+  &__link {
+    font-size: 18px;
+    font-weight: 700;
+    color: $color-pink;
+    transition: $transition;
+
+    @media all and (max-width: $mobile-width) {
+      font-size: 12px;
+    }
+
+    &:hover {
+      color: $color-pink-hover;
+    }
+  }
+}

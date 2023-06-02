@@ -1,0 +1,14 @@
+@import '../../styles/variables.scss';
+$error-message: 'message';
+
+.#{$error-message} {
+  color: $color-red;
+  &__title {
+    font-size: 18px;
+  }
+
+  &__content {
+    margin-top: 10px;
+    font-size: 15px;
+  }
+}

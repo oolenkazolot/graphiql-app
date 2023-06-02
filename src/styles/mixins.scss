@@ -1,0 +1,64 @@
+@import './variables.scss';
+
+@mixin btn-style($color1, $color2) {
+  padding: 5px 10px;
+  background-color: $color1;
+  border: 1px solid $color2;
+  border-radius: 4px;
+}
+
+@mixin mobile {
+  @media (max-width: $mobile-width) {
+    @content;
+  }
+}
+
+@mixin small-desktop {
+  @media (max-width: $small-desktop-width) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin welcome-h2($color) {
+  font-size: 30px;
+  line-height: 42px;
+  color: $color;
+  font-weight: 300;
+  text-align: center;
+}
+
+@mixin welcome-p($color) {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 35.2px;
+  padding: 1rem;
+  color: $color;
+}
+
+@mixin welcome-wrapper($padding) {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $padding;
+}
+
+@mixin positioning($align) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: $align;
+}
+
+@mixin font-settings($color) {
+  font-size: 15px;
+  font-weight: 300;
+  color: $color;
+}

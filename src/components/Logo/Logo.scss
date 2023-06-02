@@ -1,0 +1,35 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.logo-welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: none;
+  transition: $transition-code-examples;
+  opacity: 1;
+  &__svg {
+    width: 90px;
+    height: 90px;
+
+    @include mobile {
+      width: 70px;
+      height: 70px;
+    }
+  }
+  &__title {
+    font-size: 30px;
+    color: $color-pink-bright;
+    font-weight: 300;
+
+    @include mobile {
+      font-size: 26px;
+    }
+  }
+}
+
+.code-invisible {
+  transform: $transform-duration;
+  opacity: 0;
+}

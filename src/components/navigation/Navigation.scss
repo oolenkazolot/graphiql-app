@@ -1,0 +1,102 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.nav {
+  font-family: 'Rubik', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 92%;
+  transition: 0.5s ease-out;
+  @include mobile {
+    background-color: $background-dark;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px 0px 40px 10px;
+    position: fixed;
+    top: 0;
+    left: 1000px;
+    width: 100vw;
+    z-index: 100;
+    gap: 1rem;
+  }
+  &__ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0;
+    @include mobile {
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+  }
+  &__li {
+    list-style: none;
+  }
+
+  &__link {
+    @include font-settings($color-grey);
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+.active {
+  color: white;
+}
+
+.cross {
+  cursor: pointer;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  display: none;
+  @include mobile {
+    display: block;
+  }
+}
+
+.nav-visible {
+  left: 0;
+}
+
+.invisible-nav {
+  display: none;
+}
+
+.lang {
+  margin-left: auto;
+  margin-right: 1rem;
+  border: none;
+  background: transparent;
+  color: white;
+  font-family: 'Rubik', sans-serif;
+  outline: none;
+  width: 3rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  &::-ms-expand {
+    display: none;
+  }
+  @include mobile {
+    margin: 0;
+    width: auto;
+  }
+}
+
+.option {
+  color: black;
+  text-align: center;
+}

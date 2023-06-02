@@ -1,0 +1,59 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  @include mobile {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  &__sign-in,
+  &__sign-up {
+    background: $color-pink;
+    border-radius: 15px;
+    border: none;
+    transition: $transition-buttons;
+    min-width: 115px;
+    height: 35px;
+
+    & .nav__link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: inherit;
+      height: inherit;
+    }
+
+    @include mobile {
+      background: transparent;
+      padding: 0;
+      min-width: auto;
+    }
+    &:hover {
+      background: $color-pink-hover;
+      @include mobile {
+        background: transparent;
+      }
+    }
+  }
+}
+
+#sign-in,
+#sign-up,
+#log-out {
+  color: white;
+  @include mobile {
+    color: $color-grey;
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+.invisible-btn {
+  display: none;
+}
