@@ -1,10 +1,10 @@
 # GraphiQL-app
 
-Stack: React/Redux/TypeScript,SASS/Firebase/Vite
+Stack: React/Redux/TypeScript/SASS/Firebase/Vite
 
 [Link](https://graphiql-dream-team.netlify.app/)
 
-GraphiQL is a powerful GraphQL query playground/IDE built on React, TypeScript, Redux, SASS, Firebase, and Vite. It offers user-friendly features and high-level security through Firebase authentication, making it an essential tool for web developers.
+GraphiQL is a powerful GraphQL query playground/IDE built on React, Redux, TypeScript, SASS, Firebase, and Vite. It offers user-friendly features and high-level security through Firebase authentication, making it an essential tool for web developers.
 
 ## Welcome Page
 
@@ -18,11 +18,7 @@ The GraphiQL welcome page impresses with its beautiful and attractive design. Yo
 
 The GraphiQL page includes a request editor, variables editor, headers editor, lazy-loaded documentation explorer, and a section for displaying responses.
 
-A user-friendly interface for writing and editing GraphQL queries, mutations, and subscriptions.
-Allows users to define and modify variables used in GraphQL operations
-Enables adding custom headers to GraphQL requests
-Lazy-loaded Documentation Explorer: Provides schema exploration with efficient lazy-loading.
-Response Section: Displays the response received from the GraphQL server.
+A user-friendly interface for writing and editing GraphQL queries, mutations, and subscriptions. It allows users to define and modify variables used in GraphQL operations. Custom headers can be added to GraphQL requests. The Documentation Explorer facilitates schema exploration with efficient lazy-loading. The Response Section displays the response received from the GraphQL server.
 
 <image src="src/assets/screenshots/Screenshot_4.png" alt="welcome">
 <image src="src/assets/screenshots/Screenshot_5.png" alt="welcome">
