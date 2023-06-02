@@ -4,7 +4,7 @@ Stack: React/Redux/TypeScript/SASS/Firebase/Vite
 
 [Link](https://graphiql-dream-team.netlify.app/)
 
-GraphiQL is a powerful GraphQL query playground/IDE built on React, Redux, TypeScript, SASS, Firebase, and Vite. It offers user-friendly features and high-level security through Firebase authentication, making it an essential tool for web developers.
+GraphiQL is a powerful playground/IDE for GraphQL queries, built on React, Redux, TypeScript, SASS, Firebase, and Vite. It offers convenient features and authentication through Firebase, making it an essential tool for web developers.
 
 ## Welcome Page
 
